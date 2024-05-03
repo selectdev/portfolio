@@ -21,17 +21,6 @@
 
 	const dispatch = createEventDispatcher();
 
-	const switchWord = () => {
-		intervalDuration = 300 - index * 10;
-		clearInterval(run);
-
-		if (index >= words.length - 1) dispatch('close');
-		else index++;
-
-		word = words[index];
-		run = setInterval(switchWord, intervalDuration);
-	};
-
         const animateCSS = (element, animation, prefix = 'animate__') =>
             new Promise((resolve, reject) => {
                 const animationName = `${prefix}${animation}`;
@@ -48,12 +37,25 @@
                 node.addEventListener('animationend', handleAnimationEnd, {once: true});
         });
 
+	const switchWord = () => {
+		intervalDuration = 300 - index * 10;
+		clearInterval(run);
+
+		if (index >= words.length - 1) dispatch('close');
+		else index++;
+
+                animateCSS("#word", "backInUp");
+		word = words[index];
+		run = setInterval(switchWord, intervalDuration);
+	};
+
 	let run = setInterval(switchWord, intervalDuration);
 </script>
 
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
 		<li
+                        id="word"
 			class="text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
