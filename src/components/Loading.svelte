@@ -17,7 +17,7 @@
 
 	let index: number = 0;
 	let word: String = words[index];
-	let intervalDuration: number = 300;
+	let intervalDuration: number = 400;
 
 	const dispatch = createEventDispatcher();
 
@@ -38,7 +38,6 @@
         });
 
 	const switchWord = () => {
-                animateCSS("#word", "backInUp");
 		intervalDuration = 300 - index * 10;
 		clearInterval(run);
 
@@ -46,6 +45,7 @@
 		else index++;
 
 		word = words[index];
+                animateCSS("#word", "backInUp");
 		run = setInterval(switchWord, intervalDuration);
 	};
 
@@ -56,7 +56,7 @@
 	<ol class="list-disc no-scrollbar">
 		<li
                         id="word"
-			class="text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
+			class="animate__animated animate__backInDown text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
 		</li>
