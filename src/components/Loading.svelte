@@ -45,7 +45,7 @@
 		else index++;
 
 		word = words[index];
-                animateCSS("#word", "backInUp");
+                //animateCSS("#word", "backInUp");
 		run = setInterval(switchWord, intervalDuration);
 	};
 
@@ -56,7 +56,7 @@
 	<ol class="list-disc no-scrollbar">
 		<li
                         id="word"
-			class="animate__animated animate__backInDown text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
+			class="text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
 		</li>
