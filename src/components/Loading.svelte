@@ -54,7 +54,7 @@
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
 		<li
-			class="animate__animated animate_backInUp text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
+			class="animate__animated animate__backInUp animate__infinite text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
 		</li>
