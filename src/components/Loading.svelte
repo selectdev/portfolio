@@ -38,13 +38,13 @@
         });
 
 	const switchWord = () => {
+                animateCSS("#word", "backInUp");
 		intervalDuration = 300 - index * 10;
 		clearInterval(run);
 
 		if (index >= words.length - 1) dispatch('close');
 		else index++;
 
-                animateCSS("#word", "backInUp");
 		word = words[index];
 		run = setInterval(switchWord, intervalDuration);
 	};
