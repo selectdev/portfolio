@@ -17,7 +17,7 @@
 
 	let index: number = 0;
 	let word: String = words[index];
-	let intervalDuration: number = 400;
+	let intervalDuration: number = 1000;
 
 	const dispatch = createEventDispatcher();
 
