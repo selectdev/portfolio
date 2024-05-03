@@ -45,7 +45,6 @@
 		else index++;
 
 		word = words[index];
-                //animateCSS("#word", "backInUp");
 		run = setInterval(switchWord, intervalDuration);
 	};
 
@@ -55,8 +54,7 @@
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
 		<li
-                        id="word"
-			class="text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
+			class="animate__animated animate_backInUp text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
 		</li>
