@@ -1,25 +1,20 @@
 <script lang="ts">
-	import Header from '../components/Header.svelte';
 	import Loading from '../components/Loading.svelte';
 
 	import '@fortawesome/fontawesome-free/css/all.min.css';
 	import '../app.css';
 	import 'animate.css';
+	import { page } from '$app/stores';
 
 	let loaded: boolean = false;
+	if ($page.url.pathname != '/') loaded = true;
 </script>
 
 <section id="content">
 	{#if loaded}
-		<header>
-			<Header />
-		</header>
-
-		<div class="p-2" />
-
-		<main class="m-4">
+		<div class="min-h-screen bg-gray-800">
 			<slot />
-		</main>
+		</div>
 	{:else}
 		<Loading on:close={() => (loaded = true)} />
 	{/if}

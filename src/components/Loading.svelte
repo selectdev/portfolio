@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { createEventDispatcher } from 'svelte';
 
 	let words: String[] = [
@@ -21,28 +22,35 @@
 
 	const dispatch = createEventDispatcher();
 
-        const animateCSS = (element, animation, prefix = 'animate__') =>
-            new Promise((resolve, reject) => {
-                const animationName = `${prefix}${animation}`;
-                const node = document.querySelector(element);
+	const animateCSS = (element: string, animation: string, prefix: string = 'animate__') =>
+		new Promise((resolve, reject) => {
+			const animationName = `${prefix}${animation}`;
+			const node = document.querySelector(element);
 
-                node.classList.add(`${prefix}animated`, animationName);
+			node?.classList.add(`${prefix}animated`, animationName);
 
-                const handleAnimationEnd = (event) => {
-                    event.stopPropagation();
-                    node.classList.remove(`${prefix}animated`, animationName);
-                    resolve('Animation ended');
-                };
+			const handleAnimationEnd = (event: any) => {
+				event.stopPropagation();
+				node?.classList.remove(`${prefix}animated`, animationName);
+				resolve('Animation ended');
+			};
 
-                node.addEventListener('animationend', handleAnimationEnd, {once: true});
-        });
+			node?.addEventListener('animationend', handleAnimationEnd, { once: true });
+		});
 
 	const switchWord = () => {
 		intervalDuration = 300 - index * 10;
 		clearInterval(run);
 
-		if (index >= words.length - 1) dispatch('close');
-		else index++;
+		if (index >= words.length - 1) {
+			if (browser) {
+				const cum = document.getElementById('bar');
+				cum?.classList.remove('hidden');
+				cum?.classList.add('stretch');
+
+				setTimeout(() => dispatch('close'), 1800);
+			}
+		} else index++;
 
 		word = words[index];
 		run = setInterval(switchWord, intervalDuration);
@@ -61,4 +69,4 @@
 	</ol>
 </div>
 
-<div class="hidden bg-gray-600 p-4" />
+<div id="bar" class="hidden bg-gray-800 p-4" />
