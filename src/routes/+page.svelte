@@ -60,7 +60,7 @@
 	<div id="about-me">
 		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Hello, there. I'm Select!</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a Full-Stack Software Developer (that occasionally touches grass.)
+			I'm a 17 year old full-stack software developer, that loves to work with NodeJS/TypeScript, Python and Golang. I also like to occasionally touch some grass (totally). Don't worry, there aren't any bugs here &#128064;
 		</p>
 	</div>
 
