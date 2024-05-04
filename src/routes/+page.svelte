@@ -47,7 +47,7 @@
 
 		<div id="logo">
 			<img
-				src="https://static01.nyt.com/images/2016/06/30/world/30nkorea-web1/30nkorea-web1-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+				src="/logo.png"
 				class="absolute h-[100px] mt-3 mr-2.5 p-1 top-0 right-0 bg-gray-700 rounded-full"
 				height="100px"
 				alt="selectdev logo"
@@ -58,7 +58,7 @@
 	<div class="p-10" />
 
 	<div id="about-me">
-		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Hello, there. I'm Daddy Kim!</h1>
+		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Hello, there. I'm Select!</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
 			I'm a Full-Stack Software Developer (that occasionally touches grass.)
 		</p>
