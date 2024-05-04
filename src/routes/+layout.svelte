@@ -5,6 +5,7 @@
 	import '../app.css';
 	import 'animate.css';
 	import { page } from '$app/stores';
+	import Meta from '../components/Meta.svelte';
 
 	let loaded: boolean = false;
 	if ($page.url.pathname != '/') loaded = true;
@@ -16,6 +17,7 @@
 			<slot />
 		</div>
 	{:else}
+        <Meta />
 		<Loading on:close={() => (loaded = true)} />
 	{/if}
 </section>
