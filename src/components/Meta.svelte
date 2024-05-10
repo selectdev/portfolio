@@ -28,11 +28,6 @@
 	<meta name="theme-color" content="#edafb8" />
 	<meta name="apple-mobile-web-app-status-bar" content="#edafb8" />
 
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={Title} />
-	<meta name="twitter:description" content={Description} />
-	<meta name="twitter:image" content={Image ? Image : Logo} />
-
 	{#if Image}
 		<meta name="image" content={Image} />
 	{/if}
