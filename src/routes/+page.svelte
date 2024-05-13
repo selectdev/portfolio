@@ -27,14 +27,14 @@
 			description: "AntiRaid is a Automatic Moderation Service created to protect your Discord Server from threats, unsafe bots and spamming using our advanced technology!",
 			link: 'https://antiraid.xyz/',
 			image: 'https://antiraid.xyz/logo.webp',
-            flair: "OWNER"
+            flair: "EXECUTIVE DIRECTOR"
 		},
         {
 			name: 'Infinity List',
 			description: "Search our vast list of bots for an exciting start to your server.",
 			link: 'https://infinitybots.gg/',
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
-            flair: "CONTRIBUTOR"
+            flair: "LEAD DEVELOPER"
 		}
 	];
 </script>
