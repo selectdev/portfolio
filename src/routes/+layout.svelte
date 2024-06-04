@@ -17,7 +17,7 @@
 			<slot />
 		</div>
 	{:else}
-        <Meta />
+		<Meta />
 		<Loading on:close={() => (loaded = true)} />
 	{/if}
 </section>

@@ -18,25 +18,9 @@
 
 	let index: number = 0;
 	let word: String = words[index];
-	let intervalDuration: number = 1000;
+	let intervalDuration: number = 200;
 
 	const dispatch = createEventDispatcher();
-
-	const animateCSS = (element: string, animation: string, prefix: string = 'animate__') =>
-		new Promise((resolve, reject) => {
-			const animationName = `${prefix}${animation}`;
-			const node = document.querySelector(element);
-
-			node?.classList.add(`${prefix}animated`, animationName);
-
-			const handleAnimationEnd = (event: any) => {
-				event.stopPropagation();
-				node?.classList.remove(`${prefix}animated`, animationName);
-				resolve('Animation ended');
-			};
-
-			node?.addEventListener('animationend', handleAnimationEnd, { once: true });
-		});
 
 	const switchWord = () => {
 		intervalDuration = 300 - index * 10;
@@ -46,9 +30,9 @@
 			if (browser) {
 				const cum = document.getElementById('bar');
 				cum?.classList.remove('hidden');
-				cum?.classList.add('stretch');
-
-				setTimeout(() => dispatch('close'), 1800);
+                cum?.classList.add('stretch');
+                
+				setTimeout(() => dispatch('close'), 2000);
 			}
 		} else index++;
 
@@ -62,7 +46,7 @@
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
 		<li
-			class="animate__animated animate__bounce animate__infinite animate__fast text-warning-600 font-extrabold tracking-tight italic text-5xl no-scrollbar"
+			class="text-white font-extrabold tracking-tight italic text-5xl no-scrollbar"
 		>
 			{word}
 		</li>
