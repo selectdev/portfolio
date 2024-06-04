@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Meta from '../components/Meta.svelte';
 
-    const age: number = 17;
-    const available: boolean = true;
+	const age: number = 17;
+	const available: boolean = true;
 
 	const projects: {
 		name: string;
@@ -44,28 +44,33 @@
 		}
 	];
 
-    const stack: {
-        name: string;
-        description: string;
-        link: string;
-        image: string;
-    }[] = [{
-        name: "Sveltekit",
-        description: "Svelte is a free and open-source component-based front-end software framework.",
-        link: "https://kit.svelte.dev/",
-        image: "https://a.storyblok.com/f/88751/1702x2049/619c584101/svelte_logo.png",
-    }, {
-        name: "NodeJS",
-        description: "Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.",
-        link: "https://nodejs.org/",
-        image: "https://tse4.mm.bing.net/th?id=OIP.9zN9M5IW0FwVUWiO-xOoMAHaHa&pid=15.1",
-    },
-    {
-        name: "Python",
-        description: "Python is a high-level programming language that lets you work more efficiently and effectively.",
-        link: "https://www.python.org/",
-        image: "https://www.python.org/static/img/python-logo.png",
-    }];
+	const stack: {
+		name: string;
+		description: string;
+		link: string;
+		image: string;
+	}[] = [
+		{
+			name: 'Sveltekit',
+			description: 'Svelte is a free and open-source component-based front-end software framework.',
+			link: 'https://kit.svelte.dev/',
+			image: 'https://a.storyblok.com/f/88751/1702x2049/619c584101/svelte_logo.png'
+		},
+		{
+			name: 'NodeJS',
+			description:
+				'Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.',
+			link: 'https://nodejs.org/',
+			image: 'https://tse4.mm.bing.net/th?id=OIP.9zN9M5IW0FwVUWiO-xOoMAHaHa&pid=15.1'
+		},
+		{
+			name: 'Python',
+			description:
+				'Python is a high-level programming language that lets you work more efficiently and effectively.',
+			link: 'https://www.python.org/',
+			image: 'https://www.python.org/static/img/python-logo.png'
+		}
+	];
 </script>
 
 <Meta />
@@ -87,14 +92,19 @@
 	<div class="p-10" />
 
 	<div id="about-me">
-        {#if available}
-            <span class="bg-green-500 text-white p-1 text-xs px-1.5 rounded-r-full font-bold">Available for Hire!</span>
-        {/if}
+		{#if available}
+			<span class="bg-green-500 text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
+				>Available for Hire!</span
+			>
+		{/if}
 
-		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Hello, there. I'm <span class="text-red-600">Select</span>!</h1>
+		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">
+			Hello, there. I'm <span class="text-red-600">Select</span>!
+		</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>. {available ? "Now available for hire." : ""} Don't worry, there
-			aren't any bugs here &#128064;
+			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>. {available
+				? 'Now available for hire.'
+				: ''} Don't worry, there aren't any bugs here &#128064;
 		</p>
 	</div>
 
@@ -141,41 +151,41 @@
 			{/each}
 		</div>
 
-        <div class="p-5" />
+		<div class="p-5" />
 
-	    <div id="tech-stack">
-		    <h1 class="text-warning-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
-		    <p class="text-warning-300 font-bold tracking-tight">
-			    Oh, hello there. This is the stack, that i use when working on projects. 
-		    </p>
+		<div id="tech-stack">
+			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
+			<p class="text-warning-300 font-bold tracking-tight">
+				Oh, hello there. This is the stack, that i use when working on projects.
+			</p>
 
-		    <div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-                {#each stack as p}
-				<div class="self-auto">
-					<div
-						class="block max-w-sm p-3 border rounded-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
-					>
-						<a href={p.link}>
-							<div class="flex">
-								<img
-									src={p.image}
-									class="h-[30px] bg-gray-700 rounded-full"
-									height="30px"
-									alt="{p.name} logo"
-								/>
+			<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+				{#each stack as p}
+					<div class="self-auto">
+						<div
+							class="block max-w-sm p-3 border rounded-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+						>
+							<a href={p.link}>
+								<div class="flex">
+									<img
+										src={p.image}
+										class="h-[30px] bg-gray-700 rounded-full"
+										height="30px"
+										alt="{p.name} logo"
+									/>
 
-								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
-								>
-									{p.name}
-								</h5>
-							</div>
-							<p class="mt-2 text-base font-semibold text-secondary-500">{p.description}</p>
-						</a>
+									<h5
+										class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									>
+										{p.name}
+									</h5>
+								</div>
+								<p class="mt-2 text-base font-semibold text-secondary-500">{p.description}</p>
+							</a>
+						</div>
 					</div>
-				</div>
-			{/each}
-            </div>
-        </div>
+				{/each}
+			</div>
+		</div>
 	</div>
 </main>

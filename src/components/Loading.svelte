@@ -30,8 +30,8 @@
 			if (browser) {
 				const cum = document.getElementById('bar');
 				cum?.classList.remove('hidden');
-                cum?.classList.add('stretch');
-                
+				cum?.classList.add('stretch');
+
 				setTimeout(() => dispatch('close'), 2000);
 			}
 		} else index++;
@@ -45,9 +45,7 @@
 
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
-		<li
-			class="text-white font-extrabold tracking-tight italic text-5xl no-scrollbar"
-		>
+		<li class="text-white font-extrabold tracking-tight italic text-5xl no-scrollbar">
 			{word}
 		</li>
 	</ol>
