@@ -63,18 +63,20 @@
 			link: 'https://nodejs.org/',
 			image: 'fa-brands fa-node-js'
 		},
-        {
-            name: 'JavaScript',
-			description: 'JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS.',
+		{
+			name: 'JavaScript',
+			description:
+				'JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS.',
 			link: 'https://www.w3schools.com/js/DEFAULT.asp',
 			image: 'fa-brands fa-js'
-        },
-        {
-            name: 'Go',
-			description: 'Go is a statically typed, compiled high-level programming language designed at Google.',
+		},
+		{
+			name: 'Go',
+			description:
+				'Go is a statically typed, compiled high-level programming language designed at Google.',
 			link: 'https://go.dev/',
 			image: 'fa-brands fa-golang'
-        },
+		},
 		{
 			name: 'Python',
 			description:
@@ -108,10 +110,11 @@
 		>
 
 		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
-			Hello, there. I'm <span class="text-red-600">Select</span>!
+			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>. {available
+			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>, known as
+			<span class="text-red-300">Select</span> on the interwebs. {available
 				? 'Now available for hire.'
 				: ''} Don't worry, there aren't any bugs here &#128064;
 		</p>
