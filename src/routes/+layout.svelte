@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Loading from '../components/Loading.svelte';
+	import Header from '../components/Header.svelte';
 
 	import '@fortawesome/fontawesome-free/css/all.min.css';
 	import '../app.css';
@@ -14,6 +15,7 @@
 <section id="content">
 	{#if loaded}
 		<div class="min-h-screen bg-gray-800">
+			<Header />
 			<slot />
 		</div>
 	{:else}

@@ -2,7 +2,7 @@
 	import Meta from '../components/Meta.svelte';
 
 	const age: number = 17;
-	const available: boolean = true;
+	const available: boolean = false;
 
 	const projects: {
 		name: string;
@@ -61,14 +61,26 @@
 			description:
 				'Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.',
 			link: 'https://nodejs.org/',
-			image: 'https://tse4.mm.bing.net/th?id=OIP.9zN9M5IW0FwVUWiO-xOoMAHaHa&pid=15.1'
+			image: 'fa-brands fa-node-js'
 		},
+        {
+            name: 'JavaScript',
+			description: 'JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS.',
+			link: 'https://www.w3schools.com/js/DEFAULT.asp',
+			image: 'fa-brands fa-js'
+        },
+        {
+            name: 'Go',
+			description: 'Go is a statically typed, compiled high-level programming language designed at Google.',
+			link: 'https://go.dev/',
+			image: 'fa-brands fa-golang'
+        },
 		{
 			name: 'Python',
 			description:
 				'Python is a high-level programming language that lets you work more efficiently and effectively.',
 			link: 'https://www.python.org/',
-			image: 'https://www.python.org/static/img/python-logo.png'
+			image: 'fa-brands fa-python'
 		}
 	];
 
@@ -87,29 +99,15 @@
 <Meta />
 
 <main class="p-6">
-	<div id="welcome">
-		<h1 class="mt-5 ml-1 text-warning-600 text-3xl font-extrabold tracking-tighter">Welcome!</h1>
-
-		<div id="logo">
-			<img
-				src="/logo.png"
-				class="absolute h-[100px] mt-3 mr-2.5 p-1 top-0 right-0 bg-gray-700 rounded-full"
-				height="100px"
-				alt="selectdev logo"
-			/>
-		</div>
-	</div>
-
-	<div class="p-10" />
-
 	<div id="about-me">
-		{#if available}
-			<span class="bg-green-500 text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
-				>Available for Hire!</span
-			>
-		{/if}
+		<span
+			class="{available
+				? 'bg-success-500'
+				: 'bg-error-500'} text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
+			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
+		>
 
-		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">
+		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Select</span>!
 		</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
@@ -131,7 +129,7 @@
 			{#each projects as project}
 				<div class="self-auto">
 					<div
-						class="block max-w-sm p-3 border rounded-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+						class="block max-w-sm p-3 border rounded-br-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
 							{#if project.flair}
@@ -174,16 +172,20 @@
 				{#each stack as p}
 					<div class="self-auto">
 						<div
-							class="block max-w-sm p-3 border rounded-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+							class="block max-w-sm p-3 border rounded-br-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
 						>
 							<a href={p.link}>
 								<div class="flex">
-									<img
-										src={p.image}
-										class="h-[30px] bg-gray-700 rounded-full"
-										height="30px"
-										alt="{p.name} logo"
-									/>
+									{#if p.image.startsWith('https://')}
+										<img
+											src={p.image}
+											class="h-[30px] bg-gray-700 rounded-full"
+											height="30px"
+											alt="{p.name} logo"
+										/>
+									{:else}
+										<i class="mt-3 {p.image} fa-xl max-h-[30px] text-white rounded-full" />
+									{/if}
 
 									<h5
 										class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
