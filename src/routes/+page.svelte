@@ -71,6 +71,17 @@
 			image: 'https://www.python.org/static/img/python-logo.png'
 		}
 	];
+
+	const specs: { [key: string]: string } = {
+		Case: 'Corsair iCUE 4000X RGB',
+		Storage: 'SAMSUNG 980 PRO (SSD) - 2TB',
+		Motherboard: 'MSI MAG B550 Tomahawk MAX WiFi',
+		'Graphics Card': 'GeForce RTX 4060',
+		CPU: 'AMD Ryzen 7 5700G',
+		'CPU Cooler': 'Corsair iCUE H100i Elite LCD',
+		'Power Supply': 'Corsair RM750x',
+		RAM: 'Corsair VENGEANCE RGB PRO (DDR4) - 16GB'
+	};
 </script>
 
 <Meta />
@@ -186,6 +197,22 @@
 					</div>
 				{/each}
 			</div>
+		</div>
+
+		<div class="p-5" />
+
+		<div id="pc-specs">
+			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">PC Specs</h1>
+			<p class="text-warning-300 font-bold tracking-tight">Here are some of the specs of my PC.</p>
+
+			<div class="mt-2" />
+
+			{#each Object.entries(specs) as spec}
+				<p class="ml-3 pt-1 text-warning-400 font-bold italic text-md">
+					- <span class="text-warning-500 tracking-tight">{spec[0]}:</span>
+					{spec[1]}
+				</p>
+			{/each}
 		</div>
 	</div>
 </main>
