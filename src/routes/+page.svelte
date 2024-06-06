@@ -175,7 +175,7 @@
 				{#each stack as p}
 					<div class="self-auto">
 						<div
-							class="block max-w-sm p-3 border rounded-br-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+							class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
 						>
 							<a href={p.link}>
 								<div class="flex">
