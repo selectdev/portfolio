@@ -10,9 +10,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-		   fontFamily: {
-		     'monocraft': ['Monocraft', 'sans-serif']
-		   },
+			fontFamily: {
+				monocraft: ['Monocraft', 'sans-serif']
+			}
 		}
 	},
 	plugins: [

@@ -42,12 +42,13 @@
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
 			flair: 'LEAD DEVELOPER'
 		},
-                {
-                        name: 'CordX',
-                        description: 'Discover seamless media sharing and storage. Experience the next generation of simplicity for all your digital moments.',
-                        link: 'https://cordx.lol/',
-                        image: 'https://cdn.cordx.space/510065483693817867/uzyA1mLp.png',
-                        flair: 'DEVELOPER'
+		{
+			name: 'CordX',
+			description:
+				'Discover seamless media sharing and storage. Experience the next generation of simplicity for all your digital moments.',
+			link: 'https://cordx.lol/',
+			image: '/cordx.png',
+			flair: 'DEVELOPER'
 		}
 	];
 
@@ -116,12 +117,12 @@
 			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
+		<h1 class="pt-1 text-warning-600 text-xl font-monocraft italic font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>, known as
-			<span class="text-red-300">Select</span> on the interwebs. {available
+			I'm a {age} year old <span class="text-red-300 font-monocraft">full-stack software developer</span>, known as
+			<span class="text-red-300 font-monocraft">Select</span> on the interwebs. {available
 				? 'Now available for hire.'
 				: ''} Don't worry, there aren't any bugs here &#128064;
 		</p>
@@ -142,13 +143,6 @@
 						class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
-							{#if project.flair}
-								<span class="bg-indigo-500 text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
-									>{project.flair}</span
-								>
-								<div class="p-2" />
-							{/if}
-
 							<div class="flex">
 								<img
 									src={project.image}
@@ -162,7 +156,14 @@
 								>
 									{project.name}
 								</h5>
+
+                                {#if project.flair}
+								    <div class="mt-0.4 ml-1 block">
+                                        <span class="bg-indigo-500 text-white p-1 text-xs px-1.5 rounded-l-md rounded-r-full font-bold">{project.flair}</span>
+                                    </div>
+                                {/if}
 							</div>
+                            
 							<p class="mt-2 text-base font-semibold text-secondary-500">{project.description}</p>
 						</a>
 					</div>
