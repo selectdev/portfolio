@@ -2,7 +2,7 @@
 	import Meta from '../components/Meta.svelte';
 
 	const age: number = 17;
-	const available: boolean = false;
+	const available: boolean = true;
 
 	const projects: {
 		name: string;
