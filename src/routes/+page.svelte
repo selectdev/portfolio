@@ -41,6 +41,13 @@
 			link: 'https://infinitybots.gg/',
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
 			flair: 'LEAD DEVELOPER'
+		},
+                {
+                        name: 'CordX',
+                        description: 'Discover seamless media sharing and storage. Experience the next generation of simplicity for all your digital moments.',
+                        link: 'https://cordx.lol/',
+                        image: 'https://cdn.cordx.space/510065483693817867/uzyA1mLp.png',
+                        flair: 'DEVELOPER'
 		}
 	];
 
