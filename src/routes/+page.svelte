@@ -109,20 +109,21 @@
 <Meta />
 
 <main class="p-6">
+	<!-- About Me -->
 	<div id="about-me">
 		<span
-			class="{available
-				? 'bg-success-500'
-				: 'bg-error-500'} text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
+			class="bg-gradient-to-r {available
+				? 'from-green-500 via-green-600 to-green-700'
+				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
 			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-warning-600 text-xl font-monocraft italic font-bold tracking-tight">
+		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a {age} year old <span class="text-red-300 font-monocraft">full-stack software developer</span>, known as
-			<span class="text-red-300 font-monocraft">Select</span> on the interwebs. {available
+			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>, known as
+			<span class="text-red-300">Select</span> on the interwebs. {available
 				? 'Now available for hire.'
 				: ''} Don't worry, there aren't any bugs here &#128064;
 		</p>
@@ -130,6 +131,7 @@
 
 	<div class="p-5" />
 
+	<!-- Projects -->
 	<div id="projects">
 		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Projects</h1>
 		<p class="text-warning-300 font-bold tracking-tight">
@@ -143,7 +145,14 @@
 						class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
-							<div class="flex">
+							{#if project.flair}
+								<span
+									class="bg-indigo-500 text-white p-1 text-xs px-1.5 rounded-l-md rounded-r-full font-bold"
+									>{project.flair}</span
+								>
+							{/if}
+
+							<div class="mt-4 flex">
 								<img
 									src={project.image}
 									class="h-[30px] bg-gray-700 rounded-full"
@@ -156,14 +165,8 @@
 								>
 									{project.name}
 								</h5>
-
-                                {#if project.flair}
-								    <div class="mt-0.4 ml-1 block">
-                                        <span class="bg-indigo-500 text-white p-1 text-xs px-1.5 rounded-l-md rounded-r-full font-bold">{project.flair}</span>
-                                    </div>
-                                {/if}
 							</div>
-                            
+
 							<p class="mt-2 text-base font-semibold text-secondary-500">{project.description}</p>
 						</a>
 					</div>
@@ -173,6 +176,7 @@
 
 		<div class="p-5" />
 
+		<!-- Tech Stack -->
 		<div id="tech-stack">
 			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
 			<p class="text-warning-300 font-bold tracking-tight">
@@ -214,6 +218,7 @@
 
 		<div class="p-5" />
 
+		<!-- PC Specs -->
 		<div id="pc-specs">
 			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">PC Specs</h1>
 			<p class="text-warning-300 font-bold tracking-tight">Here are some of the specs of my PC.</p>

@@ -119,7 +119,7 @@
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center">
 			<img class="block h-10 w-auto rounded-full" src="/logo.png" alt="selectdev" height="40px" />
-			<h1 class="ml-2 font-extrabold tracking-tight font-monocraft italic text-md text-warning-600">SELECT</h1>
+			<h1 class="ml-2 font-extrabold tracking-tight text-lg text-warning-600">SELECT</h1>
 
 			<button
 				type="button"
