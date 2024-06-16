@@ -121,11 +121,8 @@
 		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
-		<p class="text-warning-300 font-bold tracking-tight">
-			I'm a {age} year old <span class="text-red-300">full-stack software developer</span>, known as
-			<span class="text-red-300">Select</span> on the interwebs. {available
-				? 'Now available for hire.'
-				: ''} Don't worry, there aren't any bugs here &#128064;
+                <p class="text-warning-300 font-bold tracking-tight">
+                    I'm a {age}-year-old <span class="text-red-300">full-stack developer</span> with <span class="text-red-300">six years of experience</span>, working with a variety of <span class="text-red-300">programming languages</span> and <span class="text-red-300">technologies</span>. I'm passionate about technology and excited to start a new project. {available ? "Right now, I'm available for hire and ready to bring fresh ideas to your team." : ""}
 		</p>
 	</div>
 
