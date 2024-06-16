@@ -114,7 +114,7 @@
 		<span
 			class="bg-gradient-to-r {available
 				? 'from-green-500 via-green-600 to-green-700'
-				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-lt-md rounded-rb-full font-bold"
+				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-md font-bold"
 			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
