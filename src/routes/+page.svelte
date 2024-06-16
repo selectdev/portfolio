@@ -17,7 +17,7 @@
 				"Discover top-tier bots for Discord and Revolt here. Elevate your server's capabilities with our curated picks. Plus, showcase your server with our listing service. Upgrade your server experience now!",
 			link: 'https://select-list.xyz/',
 			image: 'https://select-list.xyz/logo.png',
-			flair: 'MY PROJECT'
+			flair: 'FOUNDER'
 		},
 		{
 			name: 'Sparkyflight',
@@ -25,7 +25,7 @@
 				"Hey, neurodivergent friends! Tired of your thoughts being dismissed? Welcome to Sparkyflight – the virtual haven where your ideas soar without fear of judgment. Speak your mind, share your brilliance, and let's fly high together!",
 			link: 'https://sparkyflight.xyz/',
 			image: 'https://sparkyflight.xyz/logo.png',
-			flair: 'MY PROJECT'
+			flair: 'FOUNDER'
 		},
 		{
 			name: 'AntiRaid',
@@ -37,7 +37,7 @@
 		},
 		{
 			name: 'Infinity List',
-			description: 'Search our vast list of bots for an exciting start to your server.',
+			description: 'Begin your Discord journey with our extensive directory.',
 			link: 'https://infinitybots.gg/',
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
 			flair: 'LEAD DEVELOPER'
@@ -114,7 +114,7 @@
 		<span
 			class="bg-gradient-to-r {available
 				? 'from-green-500 via-green-600 to-green-700'
-				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
+				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-lt-md rounded-rb-full font-bold"
 			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
