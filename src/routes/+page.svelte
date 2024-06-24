@@ -86,6 +86,13 @@
 			image: 'fa-brands fa-golang'
 		},
 		{
+			name: 'Rust',
+			description:
+				'Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency.',
+			link: 'https://www.rust-lang.org/',
+			image: 'fa-brands fa-rust'
+		},
+		{
 			name: 'Python',
 			description:
 				'Python is a high-level programming language that lets you work more efficiently and effectively.',
@@ -113,16 +120,22 @@
 	<div id="about-me">
 		<span
 			class="bg-gradient-to-r {available
-				? 'from-green-500 via-green-600 to-green-700'
-				: 'from-red-400 via-red-500 to-red-600'} text-white p-1 text-xs px-1.5 rounded-md font-bold"
+				? 'from-primary-500 via-primary-600 to-primary-700'
+				: 'from-error-500 via-error-600 to-error-700'} text-white p-1 text-xs px-1.5 rounded-md font-bold"
 			>{available ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-warning-600 text-3xl font-bold tracking-tight">
+		<h1 class="pt-1 text-primary-600 text-3xl font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
-                <p class="text-warning-300 font-bold tracking-tight">
-                    I'm a {age}-year-old <span class="text-red-300">full-stack developer</span> with <span class="text-red-300">six years of experience</span>, working with a variety of <span class="text-red-300">programming languages</span> and <span class="text-red-300">technologies</span>. I'm passionate about technology and excited to start a new project. {available ? "Right now, I'm available for hire and ready to bring fresh ideas to your team." : ""}
+		<p class="text-primary-300 font-bold tracking-tight">
+			I'm a {age}-year-old <span class="text-secondary-300">full-stack developer</span> with
+			<span class="text-secondary-300">six years of experience</span>, working with a variety of
+			<span class="text-secondary-300">programming languages</span>
+			and <span class="text-secondary-300">technologies</span>. I'm passionate about technology and
+			excited to start a new project. {available
+				? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
+				: ''}
 		</p>
 	</div>
 
@@ -130,8 +143,8 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Projects</h1>
-		<p class="text-warning-300 font-bold tracking-tight">
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Projects</h1>
+		<p class="text-primary-300 font-bold tracking-tight">
 			Here are some of the projects I've worked on.
 		</p>
 
@@ -139,12 +152,12 @@
 			{#each projects as project}
 				<div class="self-auto">
 					<div
-						class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+						class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
 							{#if project.flair}
 								<span
-									class="bg-indigo-500 text-white p-1 text-xs px-1.5 rounded-l-md rounded-r-full font-bold"
+									class="bg-surface-400 text-white p-1 text-xs px-1.5 rounded-l-md rounded-r-full font-bold"
 									>{project.flair}</span
 								>
 							{/if}
@@ -152,7 +165,7 @@
 							<div class="mt-4 flex">
 								<img
 									src={project.image}
-									class="h-[30px] bg-gray-700 rounded-full"
+									class="h-[30px] bg-surface-700 rounded-full"
 									height="30px"
 									alt="{project.name} logo"
 								/>
@@ -175,8 +188,8 @@
 
 		<!-- Tech Stack -->
 		<div id="tech-stack">
-			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
-			<p class="text-warning-300 font-bold tracking-tight">
+			<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
+			<p class="text-primary-300 font-bold tracking-tight">
 				Oh, hello there. This is the stack, that i use when working on projects.
 			</p>
 
@@ -184,14 +197,14 @@
 				{#each stack as p}
 					<div class="self-auto">
 						<div
-							class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-800 border-surface-800 hover:bg-surface-600"
+							class="block max-w-sm p-3 border rounded-br-lg hover:rounded-tl-lg shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 						>
 							<a href={p.link}>
 								<div class="flex">
 									{#if p.image.startsWith('https://')}
 										<img
 											src={p.image}
-											class="h-[30px] bg-gray-700 rounded-full"
+											class="h-[30px] bg-surface-700 rounded-full"
 											height="30px"
 											alt="{p.name} logo"
 										/>
@@ -217,14 +230,14 @@
 
 		<!-- PC Specs -->
 		<div id="pc-specs">
-			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">PC Specs</h1>
-			<p class="text-warning-300 font-bold tracking-tight">Here are some of the specs of my PC.</p>
+			<h1 class="text-primary-600 text-3xl font-bold tracking-tight">PC Specs</h1>
+			<p class="text-primary-300 font-bold tracking-tight">Here are some of the specs of my PC.</p>
 
 			<div class="mt-2" />
 
 			{#each Object.entries(specs) as spec}
-				<p class="ml-3 pt-1 text-warning-400 font-bold italic text-md">
-					- <span class="text-warning-500 tracking-tight">{spec[0]}:</span>
+				<p class="ml-3 pt-1 text-primary-400 font-bold italic text-md">
+					- <span class="text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</p>
 			{/each}
