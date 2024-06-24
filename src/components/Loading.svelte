@@ -51,4 +51,4 @@
 	</ol>
 </div>
 
-<div id="bar" class="hidden bg-gray-800 p-4" />
+<div id="bar" class="hidden bg-surface-700 p-4" />

@@ -38,7 +38,7 @@
 					}
 				},
 				{
-					name: 'Rocket (default)',
+					name: 'Rocket',
 					href: () => {
 						document.cookie = 'theme=rocket';
 						document.body.setAttribute('data-theme', 'rocket');
@@ -59,7 +59,7 @@
 					}
 				},
 				{
-					name: 'Sahara',
+					name: 'Sahara (default)',
 					href: () => {
 						document.cookie = 'theme=sahara';
 						document.body.setAttribute('data-theme', 'sahara');
@@ -119,7 +119,7 @@
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center">
 			<img class="block h-10 w-auto rounded-full" src="/logo.png" alt="selectdev" height="40px" />
-			<h1 class="ml-2 font-extrabold tracking-tight text-lg text-warning-600">SELECT</h1>
+			<h1 class="ml-2 font-extrabold tracking-tight text-lg text-primary-600">SELECT</h1>
 
 			<button
 				type="button"
@@ -172,8 +172,8 @@
 								}}
 								class={classNames(
 									item.current
-										? 'bg-gray-900 text-warning-600'
-										: 'text-warning-600 hover:bg-gray-700',
+										? 'bg-surface-800 text-warning-400 hover:bg-surface-700'
+										: 'bg-surface-800 text-warning-400 hover:bg-surface-700',
 									'px-3 py-2 rounded-md text-sm font-medium'
 								)}
 								aria-current={item.current ? 'page' : undefined}
@@ -214,7 +214,7 @@
 							class={classNames(
 								item.current
 									? 'bg-surface-800 text-warning-400 hover:bg-surface-700'
-									: 'text-warning-600 hover:bg-gray-600',
+									: 'bg-surface-800 text-warning-400 hover:bg-surface-700',
 								'px-3 py-2 rounded-md text-sm font-medium'
 							)}
 							aria-current={item.current ? 'page' : undefined}
