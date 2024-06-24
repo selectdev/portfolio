@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			name: 'Sahara (default)',
+			name: 'Sahara',
 			href: () => {
 				document.cookie = 'theme=sahara';
 				document.body.setAttribute('data-theme', 'sahara');
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			name: 'Crimson',
+			name: 'Crimson (default)',
 			href: () => {
 				document.cookie = 'theme=crimson';
 				document.body.setAttribute('data-theme', 'crimson');
