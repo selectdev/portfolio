@@ -1,5 +1,5 @@
 <script lang="ts">
-	let ThemeMenuOpened: boolean = true;
+	let ThemeMenuOpened: boolean = false;
 
 	const navigation: {
 		name: string;
