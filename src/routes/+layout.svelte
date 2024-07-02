@@ -27,7 +27,11 @@
 			<slot />
 		</div>
 	{:else}
-		<Meta />
+		<Meta
+			Description="I'm a {data.age}-year-old full-stack developer with six years of experience, working with a variety of programming languages and technologies. I'm passionate about technology and excited to start a new project. {data.availableForHire
+				? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
+				: ''}"
+		/>
 		<Loading on:close={() => (loaded = true)} />
 	{/if}
 </section>
