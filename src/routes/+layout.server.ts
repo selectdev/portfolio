@@ -45,7 +45,7 @@ export const load = async ({ request }: any) => {
 			description: 'Begin your Discord journey with our extensive directory.',
 			link: 'https://infinitybots.gg/',
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
-			flair: 'LEAD DEVELOPER'
+			flair: 'DEVELOPER'
 		},
 		{
 			name: 'CordX',
