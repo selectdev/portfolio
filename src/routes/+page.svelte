@@ -23,17 +23,20 @@
 			>{data.availableForHire ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-primary-600 text-3xl font-bold tracking-tight">
+		<h1 class="pt-1 text-primary-600 text-3xl md:text-4xl font-bold tracking-tight">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
-		<p class="text-primary-300 font-bold tracking-tight">
+		<p
+			class="text-primary-300 font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
+		>
 			I'm a {data.age}-year-old
-			<span class="text-secondary-300">full-stack developer</span>
+			<span class="text-secondary-300 font-bold">full-stack developer</span>
 			with
-			<span class="text-secondary-300">six years of experience</span>, working with a variety of
-			<span class="text-secondary-300">programming languages</span>
-			and <span class="text-secondary-300">technologies</span>. I'm passionate about technology and
-			excited to start a new project. {data.availableForHire
+			<span class="text-secondary-300 font-bold">six years of experience</span>, working with a
+			variety of
+			<span class="text-secondary-300 font-bold">programming languages</span>
+			and <span class="text-secondary-300 font-bold">technologies</span>. I'm passionate about
+			technology and excited to start a new project. {data.availableForHire
 				? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
 				: ''}
 		</p>
@@ -43,8 +46,8 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Projects</h1>
-		<p class="text-primary-300 font-bold tracking-tight">
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Projects</h1>
+		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
 			Here are some of the projects I've worked on.
 		</p>
 
@@ -88,8 +91,8 @@
 
 	<!-- Tech Stack -->
 	<div id="tech-stack">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Tech Stack</h1>
-		<p class="text-primary-300 font-bold tracking-tight">
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Tech Stack</h1>
+		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
 			Oh, hello there. This is the stack, that i use when working on projects.
 		</p>
 
@@ -131,8 +134,8 @@
 
 	<!-- Testimonials -->
 	<div id="testimonials">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Testimonials</h1>
-		<p class="text-primary-300 font-bold tracking-tight">
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Testimonials</h1>
+		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
 			Here are some testimonials provided by some of my clients!
 		</p>
 
@@ -143,11 +146,7 @@
 						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={testimonial.link}>
-							<span class="bg-surface-400 text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
-								>VERIFIED</span
-							>
-
-							<div class="mt-3 flex">
+							<div class="flex">
 								<img
 									src={testimonial.image}
 									class="h-[30px] bg-surface-700 rounded-full"
@@ -162,7 +161,7 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-sm lg:text-base font-semibold text-secondary-500">
+							<p class="mt-2 text-sm md:text-base font-semibold text-secondary-500">
 								{testimonial.description}
 							</p>
 						</a>
@@ -176,8 +175,8 @@
 
 	<!-- PC Specs -->
 	<div id="pc-specs">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">PC Specs</h1>
-		<p class="text-primary-300 font-bold tracking-tight">
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">PC Specs</h1>
+		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
 			Here are some of the specifications of my PC.
 		</p>
 
@@ -185,35 +184,39 @@
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.pcSpecs) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md">
+				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
 					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-bold tracking-tight">* Specifications are prone to change.</p>
+		<p class="text-primary-300 font-semibold tracking-tight">
+			* Specifications are prone to change.
+		</p>
 	</div>
 
 	<div class="p-3" />
 
 	<!-- Peripherals -->
 	<div id="peripherals">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight">Peripherals</h1>
-		<p class="text-primary-300 font-bold tracking-tight">Here are some of my peripherals.</p>
+		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Peripherals</h1>
+		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+			Here are some of my peripherals.
+		</p>
 
 		<div class="mt-2" />
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.peripherals) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md">
+				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
 					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-bold tracking-tight">* Peripherals are prone to change.</p>
+		<p class="text-primary-300 font-semibold tracking-tight">* Peripherals are prone to change.</p>
 	</div>
 </main>
 
