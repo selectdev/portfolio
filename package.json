@@ -32,6 +32,7 @@
 		"@skeletonlabs/skeleton": "^2.9.2",
 		"@skeletonlabs/tw-plugin": "^0.4.0",
 		"@tailwindcss/forms": "^0.5.7",
-		"animate.css": "^4.1.1"
+		"animate.css": "^4.1.1",
+		"sweetalert2": "^11.12.2"
 	}
 }

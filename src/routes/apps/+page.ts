@@ -35,7 +35,7 @@ export const load = async () => {
 					description: 'What is your Last Name!',
 					type: 'text',
 					autocomplete: 'family-name',
-					required: true,
+					required: false,
 					answer: null,
 					options: null
 				},
@@ -80,7 +80,7 @@ export const load = async () => {
 					description: 'What is your Last Name!',
 					type: 'text',
 					autocomplete: 'family-name',
-					required: true,
+					required: false,
 					answer: null,
 					options: null
 				},

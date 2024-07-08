@@ -1,4 +1,10 @@
 <script lang="ts">
+	import Swal from 'sweetalert2';
+	import Meta from '../../components/Meta.svelte';
+	import Footer from '../../components/Footer.svelte';
+	import type { LayoutData } from '../$types';
+	import type { PageData } from './$types';
+
 	type Question = {
 		name: string;
 		description: string;
@@ -9,14 +15,7 @@
 		options: string[] | null;
 	};
 
-	export let data: {
-		apps: {
-			name: string;
-			description: string;
-			id: string;
-			questions: Question[];
-		}[];
-	};
+	export let data: LayoutData & PageData;
 
 	let apps = data.apps;
 
@@ -46,30 +45,49 @@
 
 		if (requirementCheck) {
 			console.log(questions);
-		} else
+
+			Swal.fire({
+				title: 'Form Submitted',
+				text: 'Your form has been submitted successfully.',
+				icon: 'success'
+			});
+		} else {
+			Swal.fire({
+				title: 'Incomplete Form',
+				text: 'Please fill out all required fields before submitting.',
+				icon: 'warning',
+				confirmButtonText: 'Continue'
+			});
+
 			throw new Error(
 				'Some questions were NOT filled, as required. To continue, finish answering the questions.'
 			);
+		}
 	};
 </script>
+
+<Meta
+	Title="Applications!"
+	Description="Access all of the available applications for selectdev and Purrquinox services!"
+/>
 
 <main class="p-4">
 	<!-- Applications / Forms -->
 	{#each data.apps as app}
 		<div id={app.id}>
-			<h1 class="text-warning-600 text-3xl font-bold tracking-tight">{app.name}</h1>
-			<p class="text-warning-300 font-bold tracking-tight">{app.description}</p>
+			<h1 class="text-primary-600 text-3xl font-bold tracking-tight">{app.name}</h1>
+			<p class="text-primary-300 font-bold tracking-tight">{app.description}</p>
 
 			<div class="pt-5" />
 
 			<form>
-				<div class="px-2 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+				<div class="px-2 grid grid-cols-1 gap-x-2 gap-y-3 sm:grid-cols-2">
 					{#each app.questions as question}
 						<div>
 							<label
 								for={question.name.replaceAll(' ', '_')}
-								class="block text-sm font-semibold leading-6 text-warning-300"
-								>{question.name}</label
+								class="block text-sm font-semibold leading-6 text-secondary-300"
+								>{question.name}{question.required ? '*' : ''}</label
 							>
 
 							<div class="mt-2.5">
@@ -89,7 +107,7 @@
 
 				<button
 					type="button"
-					class="mt-3 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-md px-4 py-2.5 text-center me-2 mb-2"
+					class="mt-3 text-white bg-primary-600 focus:ring-4 focus:outline-none focus:ring-primary-400 font-semibold rounded-lg text-base px-4 py-2.5 text-center me-2 mb-2"
 					on:click={() => sendApp(app.id)}>Submit</button
 				>
 			</form>
@@ -98,3 +116,6 @@
 		<div class="p-5" />
 	{/each}
 </main>
+
+<!-- Footer -->
+<Footer {data} />

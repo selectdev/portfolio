@@ -22,8 +22,8 @@
 
 <section id="content">
 	{#if loaded}
-		<div class="min-h-screen bg-surface-800">
-			<Header />
+		<div class="min-h-screen bg-gradient-to-b from-surface-800 to-surface-500">
+			<Header {data} />
 			<slot />
 		</div>
 	{:else}

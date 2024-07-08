@@ -1,5 +1,6 @@
 <script lang="ts">
-	let ThemeMenuOpened: boolean = false;
+	import type { LayoutData } from '../routes/$types';
+	export let data: LayoutData;
 
 	const navigation: {
 		name: string;
@@ -8,6 +9,7 @@
 			name: string;
 			href: string | (() => void);
 		}[];
+		menuOpen?: boolean;
 		current?: boolean;
 	}[] = [
 		{
@@ -99,7 +101,18 @@
 		options: themes.map((theme) => ({
 			name: theme.name,
 			href: theme.href
-		}))
+		})),
+		menuOpen: false
+	});
+
+	navigation.push({
+		name: 'Socials',
+		href: () => {},
+		options: data.socials.map((social) => ({
+			name: social.name,
+			href: social.url
+		})),
+		menuOpen: false
 	});
 
 	const classNames = (...classes: string[]) => {
@@ -139,8 +152,8 @@
 							<div class="relative">
 								<button
 									on:click={() => {
-										if (ThemeMenuOpened) ThemeMenuOpened = false;
-										else ThemeMenuOpened = true;
+										if (item.menuOpen) item.menuOpen = false;
+										else item.menuOpen = true;
 									}}
 									class={classNames(
 										item.current
@@ -154,7 +167,7 @@
 									<i class="fas fa-angle-down ml-1" />
 								</button>
 
-								{#if ThemeMenuOpened}
+								{#if item.menuOpen}
 									<div
 										class="absolute right-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-surface-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
 										aria-orientation="vertical"
@@ -162,7 +175,7 @@
 									>
 										{#each item.options as option}
 											<button
-												class="block px-4 py-2 text-sm text-secondary-700 font-semibold hover:text-secondary-400 hover:underline"
+												class="block px-4 py-2 text-sm text-secondary-500 font-semibold hover:text-secondary-400 hover:underline"
 												on:click={() => {
 													if (typeof option.href === 'function') option.href();
 													else if (typeof option.href === 'string')
@@ -201,7 +214,7 @@
 			<div class="-mr-2 flex md:hidden">
 				<button
 					type="button"
-					class="relative inline-flex items-center justify-center rounded-md bg-surface-900 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+					class="relative inline-flex items-center justify-center rounded-md bg-surface-900 p-2 text-white hover:bg-gray-700 outline-none"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
 					on:click={openMobileMenu}
@@ -248,14 +261,14 @@
 					<div class="relative">
 						<button
 							on:click={() => {
-								if (ThemeMenuOpened) ThemeMenuOpened = false;
-								else ThemeMenuOpened = true;
+								if (item.menuOpen) item.menuOpen = false;
+								else item.menuOpen = true;
 							}}
 							class={classNames(
 								item.current
 									? 'bg-surface-800 text-secondary-400 hover:bg-surface-700'
 									: 'bg-surface-800 text-secondary-400 hover:bg-surface-700',
-								'px-3 py-2 rounded-md text-sm font-medium w-full'
+								'px-3 py-2 rounded-md text-sm font-medium w-half'
 							)}
 							aria-current={item.current ? 'page' : undefined}
 						>
@@ -263,7 +276,7 @@
 							<i class="fas fa-angle-down ml-1" />
 						</button>
 
-						{#if ThemeMenuOpened}
+						{#if item.menuOpen}
 							<div
 								class="absolute left-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-surface-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
 								aria-orientation="vertical"
@@ -271,7 +284,7 @@
 							>
 								{#each item.options as option}
 									<button
-										class="block px-4 py-2 text-sm text-secondary-600 font-semibold hover:text-secondary-400 hover:underline w-half"
+										class="block px-4 py-2 text-sm text-secondary-500 font-semibold hover:text-secondary-400 hover:underline w-half"
 										on:click={() => {
 											if (typeof option.href === 'function') option.href();
 											else if (typeof option.href === 'string') window.location.href = option.href;
@@ -295,7 +308,7 @@
 							item.current
 								? 'bg-surface-800 text-secondary-400 hover:bg-surface-700'
 								: 'bg-surface-800 text-secondary-400 hover:bg-surface-700',
-							'px-3 py-2 rounded-md text-sm font-medium w-full'
+							'px-3 py-2 rounded-md text-sm font-medium w-half'
 						)}
 						aria-current={item.current ? 'page' : undefined}
 					>
