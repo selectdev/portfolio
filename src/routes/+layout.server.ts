@@ -5,7 +5,7 @@ export const load = async ({ request }: any) => {
 	const cookies = cookie.parse(request.headers.get('cookie') || '');
 
 	// Main
-	const age: number = 17;
+	const age: number = 18;
 	const availableForHire: boolean = true;
 
 	// Projects

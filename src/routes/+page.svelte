@@ -59,7 +59,7 @@
 					>
 						<a href={project.link}>
 							{#if project.flair}
-								<span class="bg-surface-400 text-white p-1 text-xs px-1.5 rounded-r-full font-bold"
+								<span class="bg-primary-600 text-white p-1 text-xs px-2 rounded-full font-bold"
 									>{project.flair}</span
 								>
 							{/if}
