@@ -23,7 +23,8 @@
 	const dispatch = createEventDispatcher();
 
 	const switchWord = () => {
-		intervalDuration = 300 - index * 10;
+		intervalDuration = 300 - index * 13;
+
 		clearInterval(run);
 
 		if (index >= words.length - 1) {
