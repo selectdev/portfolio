@@ -18,12 +18,12 @@
 
 	let index: number = 0;
 	let word: String = words[index];
-	let intervalDuration: number = 300;
+	let intervalDuration: number = 200;
 
 	const dispatch = createEventDispatcher();
 
 	const switchWord = () => {
-		intervalDuration = 300 - index * 13;
+		intervalDuration = 200 - index * 10;
 
 		clearInterval(run);
 
