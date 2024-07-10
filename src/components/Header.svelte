@@ -16,6 +16,11 @@
 			name: 'Home',
 			href: '/',
 			current: true
+		},
+		{
+			name: 'Terminal',
+			href: '/terminal',
+			current: false
 		}
 	];
 
