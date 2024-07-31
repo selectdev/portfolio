@@ -14,7 +14,7 @@ export const load = async ({ request }: any) => {
 		description: string;
 		link: string;
 		image: string;
-		flair: string | null;
+		flair: string[];
 	}[] = [
 		{
 			name: 'Select List',
@@ -22,7 +22,7 @@ export const load = async ({ request }: any) => {
 				"Discover top-tier bots for Discord and Revolt here. Elevate your server's capabilities with our curated picks. Plus, showcase your server with our listing service. Upgrade your server experience now!",
 			link: 'https://select-list.xyz/',
 			image: 'https://select-list.xyz/logo.png',
-			flair: 'FOUNDER'
+			flair: ['FOUNDER']
 		},
 		{
 			name: 'Sparkyflight',
@@ -30,7 +30,7 @@ export const load = async ({ request }: any) => {
 				"Hey, neurodivergent friends! Tired of your thoughts being dismissed? Welcome to Sparkyflight – the virtual haven where your ideas soar without fear of judgment. Speak your mind, share your brilliance, and let's fly high together!",
 			link: 'https://sparkyflight.xyz/',
 			image: 'https://sparkyflight.xyz/logo.png',
-			flair: 'FOUNDER'
+			flair: ['FOUNDER']
 		},
 		{
 			name: 'AntiRaid',
@@ -38,14 +38,14 @@ export const load = async ({ request }: any) => {
 				'AntiRaid is a Automatic Moderation Service created to protect your Discord Server from threats, unsafe bots and spamming using our advanced technology!',
 			link: 'https://antiraid.xyz/',
 			image: 'https://antiraid.xyz/logo.webp',
-			flair: 'EXECUTIVE DIRECTOR'
+			flair: ['EXECUTIVE DIRECTOR']
 		},
 		{
 			name: 'Infinity List',
 			description: 'Begin your Discord journey with our extensive directory.',
 			link: 'https://infinitybots.gg/',
 			image: 'https://cdn.infinitybots.gg/core/full_logo.webp',
-			flair: 'DEVELOPER'
+			flair: ['LEAD DEVELOPER', 'HUMAN RESOURCES']
 		},
 		{
 			name: 'CordX',
@@ -53,7 +53,7 @@ export const load = async ({ request }: any) => {
 				'Discover seamless media sharing and storage. Experience the next generation of simplicity for all your digital moments.',
 			link: 'https://cordx.lol/',
 			image: '/cordx.png',
-			flair: 'DEVELOPER'
+			flair: ['DEVELOPER']
 		}
 	];
 
