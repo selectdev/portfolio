@@ -60,7 +60,7 @@
 						<a href={project.link}>
                                                         <div class="flex">
 							   {#each project.flair as flair}
-								<span class="ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-bold"
+								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-bold"
 									>{flair}</span
 								>
 							   {/each}
