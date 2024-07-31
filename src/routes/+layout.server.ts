@@ -132,7 +132,7 @@ export const load = async ({ request }: any) => {
 		Motherboard: 'MSI MAG B550 Tomahawk MAX WiFi',
 		//'Graphics Card': 'GeForce RTX 4060',
 		CPU: 'AMD Ryzen 7 5700G',
-		//'CPU Cooler': 'Corsair iCUE H100i Elite LCD',
+		'CPU Cooler': 'NZXT Kraken Elite 240',
 		'Power Supply': 'Corsair RM750x',
 		RAM: 'Corsair VENGEANCE RGB PRO (DDR4) - 16GB'
 	};
