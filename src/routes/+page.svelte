@@ -58,11 +58,13 @@
 						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
-							{#if project.flair}
+                                                        <div class="flex">
+							   {#each project.flair as flair}
 								<span class="bg-primary-600 text-white p-1 text-xs px-2 rounded-full font-bold"
-									>{project.flair}</span
+									>{flair}</span
 								>
-							{/if}
+							   {/each}
+                                                        </div>
 
 							<div class="mt-4 flex">
 								<img
