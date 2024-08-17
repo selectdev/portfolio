@@ -13,18 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 monocraft: ['Monocraft', 'sans-serif'],
-                cursive: [
-                    '"Cursive"', 
-                    'Times', 
-                    'serif', 
-                    '"Segoe Script"', // Windows cursive fallback
-                    '"Comic Sans MS"', // Another common cursive font
-                    '"Apple Chancery"', // macOS cursive fallback
-                    'Droid Arabic Kufi', // For Arabic script
-                    '"Noto Sans"', // Noto family supports multiple languages
-                    '"Noto Serif"', 
-                    'serif'
-                ],
+                cursive: ['"Borel"', 'cursive'],
             },
         },
     },
