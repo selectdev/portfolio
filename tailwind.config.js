@@ -1,5 +1,6 @@
 // @ts-check
 const { skeleton } = require('@skeletonlabs/tw-plugin');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,6 +13,14 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				monocraft: ['Monocraft', 'sans-serif']
+			}
+		}
+	},
+	variants: {
+		extend: {
+			fontFamily: {
+				sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
+				cursive: ["cursive"],
 			}
 		}
 	},
