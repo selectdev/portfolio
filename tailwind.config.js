@@ -12,17 +12,13 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				monocraft: ['Monocraft', 'sans-serif']
-			}
-		}
-	},
-	variants: {
-		extend: {
-			fontFamily: {
-				sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
-				cursive: ["cursive"],
-			}
-		}
+				monocraft: ['Monocraft', 'sans-serif'],
+				cursive: ['"Cursive"', 'Times', 'serif'],
+			},
+			fontStyle: {
+				italic: 'italic',
+			},
+		},
 	},
 	plugins: [
 		require('@tailwindcss/forms'),
