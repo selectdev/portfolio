@@ -4,43 +4,36 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: 'class',
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
-	],
-	theme: {
-		extend: {
-			fontFamily: {
-				monocraft: ['Monocraft', 'sans-serif']
-			}
-		}
-	},
-	variants: {
-		extend: {
-			fontFamily: {
-				sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
-				cursive: ["cursive"],
-			}
-		}
-	},
-	plugins: [
-		require('@tailwindcss/forms'),
-		skeleton({
-			themes: {
-				preset: [
-					'skeleton',
-					'wintry',
-					'modern',
-					'rocket',
-					'seafoam',
-					'vintage',
-					'sahara',
-					'hamlindigo',
-					'gold-nouveau',
-					'crimson'
-				]
-			}
-		})
-	]
+    darkMode: 'class',
+    content: [
+        './src/**/*.{html,js,svelte,ts}',
+        require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                monocraft: ['Monocraft', 'sans-serif'],
+                cursive: ['"Borel"', 'cursive'],
+            },
+        },
+    },
+    plugins: [
+        require('@tailwindcss/forms'),
+        skeleton({
+            themes: {
+                preset: [
+                    'skeleton',
+                    'wintry',
+                    'modern',
+                    'rocket',
+                    'seafoam',
+                    'vintage',
+                    'sahara',
+                    'hamlindigo',
+                    'gold-nouveau',
+                    'crimson'
+                ]
+            }
+        })
+    ]
 };
