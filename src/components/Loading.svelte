@@ -46,7 +46,7 @@
 
 <div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
 	<ol class="list-disc no-scrollbar">
-		<li class="text-white font-cursive italic font-extrabold text-5xl no-scrollbar">
+		<li class="text-white font-cursive non-italic font-extrabold text-5xl no-scrollbar">
 			{word}
 		</li>
 	</ol>
