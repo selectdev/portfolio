@@ -23,11 +23,11 @@
 			>{data.availableForHire ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-4 text-primary-600 font-cursive non-italic text-3xl md:text-4xl font-extrabold">
+		<h1 class="pt-5 text-primary-600 font-cursive non-italic text-3xl md:text-4xl font-extrabold">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p
-			class="text-primary-300 font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
+			class="pt-0 text-primary-300 font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
 		>
 			I'm a {data.age}-year-old
 			<span class="text-secondary-300 font-bold">full-stack developer</span>
