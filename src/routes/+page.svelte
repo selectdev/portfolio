@@ -81,7 +81,7 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-semibold text-secondary-500">{project.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
 						</a>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-semibold text-secondary-500">{p.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{p.description}</p>
 						</a>
 					</div>
 				</div>
@@ -163,7 +163,7 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-sm md:text-base font-semibold text-secondary-500">
+							<p class="mt-2 text-sm md:text-base font-monster font-semibold text-secondary-500">
 								{testimonial.description}
 							</p>
 						</a>
