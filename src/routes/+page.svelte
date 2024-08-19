@@ -17,7 +17,7 @@
 	<!-- About Me -->
 	<div id="about-me">
 		<span
-			class="bg-gradient-to-r {data.availableForHire
+			class="bg-gradient-to-r font-monster {data.availableForHire
 				? 'from-primary-500 via-primary-600 to-primary-700'
 				: 'from-error-500 via-error-600 to-error-700'} text-white p-1 text-xs px-1.5 rounded-md font-bold"
 			>{data.availableForHire ? 'Available for Hire!' : 'Not Available for Hire!'}</span
