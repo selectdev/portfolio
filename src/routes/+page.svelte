@@ -60,7 +60,7 @@
 						<a href={project.link}>
                                                         <div class="flex">
 							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-bold"
+								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-monster font-bold"
 									>{flair}</span
 								>
 							   {/each}
@@ -186,14 +186,14 @@
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.pcSpecs) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
+				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
 					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-semibold tracking-tight">
+		<p class="text-primary-300 font-monster font-semibold tracking-tight">
 			* Specifications are prone to change.
 		</p>
 	</div>
@@ -211,7 +211,7 @@
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.peripherals) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
+				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
 					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
