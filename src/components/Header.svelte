@@ -142,7 +142,7 @@
 		<div class="flex h-16 items-center justify-between">
 			<div class="flex">
 				<img class="h-8 w-8" src="/logo.png" alt="SelectDev" />
-				<span class="mt-3 ml-2 font-cursive non-italic font-extrabold text-primary-400">SELECTDEV</span>
+				<span class="mt-3 ml-2 text-primary-400 font-cursive non-italic font-extrabold">SELECTDEV</span>
 			</div>
 
 			<div class="hidden md:block">
