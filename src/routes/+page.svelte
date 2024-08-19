@@ -75,7 +75,7 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{project.name}
 								</h5>
@@ -118,7 +118,7 @@
 								{/if}
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{p.name}
 								</h5>
@@ -157,7 +157,7 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{testimonial.name} <span class="opacity-60">(with {testimonial.project})</span>
 								</h5>
