@@ -23,7 +23,7 @@
 			>{data.availableForHire ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-primary-600 text-3xl md:text-4xl font-bold tracking-tight">
+		<h1 class="pt-1 text-primary-600 font-cursive non-italic text-3xl md:text-4xl font-extrabold">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p
