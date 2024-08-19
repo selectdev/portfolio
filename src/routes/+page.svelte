@@ -46,7 +46,7 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-monster font-bold tracking-tight md:text-4xl">Projects</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Projects</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the projects I've worked on.
 		</p>
@@ -93,7 +93,7 @@
 
 	<!-- Tech Stack -->
 	<div id="tech-stack">
-		<h1 class="text-primary-600 text-3xl font-monster font-bold tracking-tight md:text-4xl">Tech Stack</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Tech Stack</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Oh, hello there. This is the stack, that i use when working on projects.
 		</p>
@@ -136,7 +136,7 @@
 
 	<!-- Testimonials -->
 	<div id="testimonials">
-		<h1 class="text-primary-600 text-3xl font-monster font-bold tracking-tight md:text-4xl">Testimonials</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Testimonials</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some testimonials provided by some of my clients!
 		</p>
@@ -177,7 +177,7 @@
 
 	<!-- PC Specs -->
 	<div id="pc-specs">
-		<h1 class="text-primary-600 text-3xl font-monster font-bold tracking-tight md:text-4xl">PC Specs</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">PC Specs</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the specifications of my PC.
 		</p>
@@ -202,7 +202,7 @@
 
 	<!-- Peripherals -->
 	<div id="peripherals">
-		<h1 class="text-primary-600 text-3xl font-monster font-bold tracking-tight md:text-4xl">Peripherals</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Peripherals</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of my peripherals.
 		</p>
