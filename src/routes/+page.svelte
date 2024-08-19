@@ -46,8 +46,8 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Projects</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cursive font-bold tracking-tight md:text-4xl">Projects</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the projects I've worked on.
 		</p>
 
