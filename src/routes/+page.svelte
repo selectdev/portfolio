@@ -60,7 +60,7 @@
 						<a href={project.link}>
                                                         <div class="flex">
 							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-monster font-bold"
+								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
 									>{flair}</span
 								>
 							   {/each}
@@ -75,7 +75,7 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{project.name}
 								</h5>
@@ -118,7 +118,7 @@
 								{/if}
 
 								<h5
-									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{p.name}
 								</h5>
@@ -157,7 +157,7 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-monster font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{testimonial.name} <span class="opacity-60">(with {testimonial.project})</span>
 								</h5>
@@ -187,13 +187,13 @@
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.pcSpecs) as spec}
 				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
-					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
+					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-monster font-semibold tracking-tight">
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
 			* Specifications are prone to change.
 		</p>
 	</div>
@@ -212,13 +212,13 @@
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.peripherals) as spec}
 				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
-					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
+					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-monster font-semibold tracking-tight">* Peripherals are prone to change.</p>
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">* Peripherals are prone to change.</p>
 	</div>
 </main>
 
