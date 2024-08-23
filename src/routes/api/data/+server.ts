@@ -1,4 +1,5 @@
-export async function GET({ data }) {
+export async function GET() {
+	let data;
 	return new Response(JSON.stringify(data).trim(),
 		{
 			headers: {
