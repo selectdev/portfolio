@@ -1,7 +1,7 @@
 import { load as loadLayoutData } from '../../+layout.server';
 
 export async function GET() {
-    const { data } = await loadLayoutData(); // Getting data from the layout's load function
+    const data = await loadLayoutData();
 
     return new Response(JSON.stringify(data),
         {
