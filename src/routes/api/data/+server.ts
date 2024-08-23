@@ -1,10 +1,13 @@
+import { load as loadLayoutData } from '../../../+layout.server';
+
 export async function GET() {
-	let data;
-	return new Response(JSON.stringify(data).trim(),
-		{
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}
-	);
+    const { data } = await loadLayoutData(); // Getting data from the layout's load function
+
+    return new Response(JSON.stringify(data),
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+    );
 }
