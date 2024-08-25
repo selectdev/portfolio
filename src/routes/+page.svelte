@@ -46,7 +46,9 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Projects</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">
+			Projects
+		</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the projects I've worked on.
 		</p>
@@ -58,13 +60,14 @@
 						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 					>
 						<a href={project.link}>
-                                                        <div class="flex">
-							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
-									>{flair}</span
-								>
-							   {/each}
-                                                        </div>
+							<div class="flex">
+								{#each project.flair as flair}
+									<span
+										class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
+										>{flair}</span
+									>
+								{/each}
+							</div>
 
 							<div class="mt-4 flex">
 								<img
@@ -81,7 +84,9 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">
+								{project.description}
+							</p>
 						</a>
 					</div>
 				</div>
@@ -93,7 +98,9 @@
 
 	<!-- Tech Stack -->
 	<div id="tech-stack">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Tech Stack</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">
+			Tech Stack
+		</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Oh, hello there. This is the stack, that i use when working on projects.
 		</p>
@@ -124,7 +131,9 @@
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{p.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">
+								{p.description}
+							</p>
 						</a>
 					</div>
 				</div>
@@ -136,7 +145,9 @@
 
 	<!-- Testimonials -->
 	<div id="testimonials">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Testimonials</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">
+			Testimonials
+		</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some testimonials provided by some of my clients!
 		</p>
@@ -177,7 +188,9 @@
 
 	<!-- PC Specs -->
 	<div id="pc-specs">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">PC Specs</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">
+			PC Specs
+		</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the specifications of my PC.
 		</p>
@@ -202,7 +215,9 @@
 
 	<!-- Peripherals -->
 	<div id="peripherals">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Peripherals</h1>
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">
+			Peripherals
+		</h1>
 		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of my peripherals.
 		</p>
@@ -218,7 +233,9 @@
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-cabin font-semibold tracking-tight">* Peripherals are prone to change.</p>
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
+			* Peripherals are prone to change.
+		</p>
 	</div>
 </main>
 
