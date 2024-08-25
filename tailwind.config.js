@@ -14,6 +14,8 @@ module.exports = {
             fontFamily: {
                 monocraft: ['Monocraft', 'sans-serif'],
                 cursive: ['"Borel"', 'cursive'],
+                monster: ['"Montserrat"', 'sans-serif'],
+                cabin: ['"Cabin"', 'sans-serif']
             },
         },
     },

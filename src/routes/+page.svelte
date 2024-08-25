@@ -17,17 +17,17 @@
 	<!-- About Me -->
 	<div id="about-me">
 		<span
-			class="bg-gradient-to-r {data.availableForHire
-				? 'from-primary-500 via-primary-600 to-primary-700'
+			class="bg-gradient-to-r font-cabin {data.availableForHire
+				? 'from-secondary-500 via-secondary-600 to-secondary-700'
 				: 'from-error-500 via-error-600 to-error-700'} text-white p-1 text-xs px-1.5 rounded-md font-bold"
 			>{data.availableForHire ? 'Available for Hire!' : 'Not Available for Hire!'}</span
 		>
 
-		<h1 class="pt-1 text-primary-600 text-3xl md:text-4xl font-bold tracking-tight">
+		<h1 class="pt-5 text-primary-600 font-cursive non-italic text-3xl md:text-4xl font-extrabold">
 			Hello, there. I'm <span class="text-red-600">Zane</span>!
 		</h1>
 		<p
-			class="text-primary-300 font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
+			class="-mt-2 text-primary-300 font-monster font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
 		>
 			I'm a {data.age}-year-old
 			<span class="text-secondary-300 font-bold">full-stack developer</span>
@@ -46,8 +46,8 @@
 
 	<!-- Projects -->
 	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Projects</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Projects</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the projects I've worked on.
 		</p>
 
@@ -60,7 +60,7 @@
 						<a href={project.link}>
                                                         <div class="flex">
 							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-bold"
+								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
 									>{flair}</span
 								>
 							   {/each}
@@ -75,13 +75,13 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{project.name}
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-semibold text-secondary-500">{project.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
 						</a>
 					</div>
 				</div>
@@ -93,8 +93,8 @@
 
 	<!-- Tech Stack -->
 	<div id="tech-stack">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Tech Stack</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Tech Stack</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Oh, hello there. This is the stack, that i use when working on projects.
 		</p>
 
@@ -118,13 +118,13 @@
 								{/if}
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{p.name}
 								</h5>
 							</div>
 
-							<p class="mt-2 text-base font-semibold text-secondary-500">{p.description}</p>
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{p.description}</p>
 						</a>
 					</div>
 				</div>
@@ -136,8 +136,8 @@
 
 	<!-- Testimonials -->
 	<div id="testimonials">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Testimonials</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Testimonials</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some testimonials provided by some of my clients!
 		</p>
 
@@ -157,13 +157,13 @@
 								/>
 
 								<h5
-									class="ml-2 text-lg font-bold overflow-x-auto tracking-tight text-secondary-400"
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
 								>
 									{testimonial.name} <span class="opacity-60">(with {testimonial.project})</span>
 								</h5>
 							</div>
 
-							<p class="mt-2 text-sm md:text-base font-semibold text-secondary-500">
+							<p class="mt-2 text-sm md:text-base font-monster font-semibold text-secondary-500">
 								{testimonial.description}
 							</p>
 						</a>
@@ -177,8 +177,8 @@
 
 	<!-- PC Specs -->
 	<div id="pc-specs">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">PC Specs</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">PC Specs</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of the specifications of my PC.
 		</p>
 
@@ -186,14 +186,14 @@
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.pcSpecs) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
-					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
+				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
+					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-semibold tracking-tight">
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
 			* Specifications are prone to change.
 		</p>
 	</div>
@@ -202,8 +202,8 @@
 
 	<!-- Peripherals -->
 	<div id="peripherals">
-		<h1 class="text-primary-600 text-3xl font-bold tracking-tight md:text-4xl">Peripherals</h1>
-		<p class="text-primary-300 font-semibold tracking-tight md:text-xl">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Peripherals</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
 			Here are some of my peripherals.
 		</p>
 
@@ -211,14 +211,14 @@
 
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.peripherals) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-bold italic text-md md:text-xl">
-					<span class="text-primary-500 tracking-tight">{spec[0]}:</span>
+				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
+					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
 					{spec[1]}
 				</li>
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-semibold tracking-tight">* Peripherals are prone to change.</p>
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">* Peripherals are prone to change.</p>
 	</div>
 </main>
 
