@@ -17,14 +17,6 @@ export const load = async ({ request }: any) => {
 		flair: string[];
 	}[] = [
 		{
-			name: 'Select List',
-			description:
-				"Discover top-tier bots for Discord and Revolt here. Elevate your server's capabilities with our curated picks. Plus, showcase your server with our listing service. Upgrade your server experience now!",
-			link: 'https://select-list.xyz/',
-			image: 'https://select-list.xyz/logo.png',
-			flair: ['FOUNDER']
-		},
-		{
 			name: 'Sparkyflight',
 			description:
 				"Hey, neurodivergent friends! Tired of your thoughts being dismissed? Welcome to Sparkyflight – the virtual haven where your ideas soar without fear of judgment. Speak your mind, share your brilliance, and let's fly high together!",
