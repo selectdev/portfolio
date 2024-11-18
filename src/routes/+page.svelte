@@ -91,6 +91,54 @@
 
 	<div class="p-3" />
 
+        
+	<!-- Companies -->
+	<div id="companies">
+		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Companies</h1>
+		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
+			Here are some of the companies i work for!
+		</p>
+
+		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+			{#each data.companies as project}
+				<div class="self-auto">
+					<div
+						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
+					>
+						<a href={project.link}>
+                                                        <div class="flex">
+							   {#each project.flair as flair}
+								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
+									>{flair}</span
+								>
+							   {/each}
+                                                        </div>
+
+							<div class="mt-4 flex">
+								<img
+									src={project.image}
+									class="h-[30px] bg-surface-700 rounded-full"
+									height="30px"
+									alt="{project.name} logo"
+								/>
+
+								<h5
+									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
+								>
+									{project.name}
+								</h5>
+							</div>
+
+							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
+						</a>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	<div class="p-3" />
+
 	<!-- Tech Stack -->
 	<div id="tech-stack">
 		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Tech Stack</h1>
