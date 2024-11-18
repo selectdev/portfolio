@@ -31,7 +31,17 @@ export const load = async ({ request }: any) => {
 			link: 'https://antiraid.xyz/',
 			image: 'https://antiraid.xyz/logo.webp',
 			flair: ['EXECUTIVE DIRECTOR']
-		},
+		}
+	];
+
+	// Companies
+	const companies: {
+		name: string;
+		description: string;
+		link: string;
+		image: string;
+		flair: string[];
+	}[] = [
 		{
 			name: 'Infinity List',
 			description: 'Begin your Discord journey with our extensive directory.',
@@ -48,7 +58,7 @@ export const load = async ({ request }: any) => {
 			flair: ['DEVELOPER']
 		}
 	];
-
+	
 	// Tech Stack
 	const stack: {
 		name: string;
@@ -160,6 +170,7 @@ export const load = async ({ request }: any) => {
 		age,
 		availableForHire,
 		projects,
+		companies,
 		stack,
 		testimonials,
 		pcSpecs,
