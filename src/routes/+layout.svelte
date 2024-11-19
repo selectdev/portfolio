@@ -32,6 +32,6 @@
 				? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
 				: ''}"
 		/>
-		<Loading on:close={() => (loaded = false)} />
+		<Loading on:close={() => (loaded = true)} />
 	{/if}
 </section>
