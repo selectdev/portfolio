@@ -10,7 +10,7 @@
 	import type { PageData } from './$types';
 	import { browser } from '$app/environment';
 
-	let loaded: boolean = false;
+	let loaded: boolean = true;
 	if ($page.url.pathname != '/') loaded = true;
 
 	export let data: PageData;
@@ -32,6 +32,6 @@
 				? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
 				: ''}"
 		/>
-		<Loading on:close={() => (loaded = true)} />
+		<Loading on:close={() => (loaded = false)} />
 	{/if}
 </section>

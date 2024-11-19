@@ -6,7 +6,7 @@ export const load = async ({ request }: any) => {
 
 	// Main
 	const age: number = 18;
-	const availableForHire: boolean = true;
+	const availableForHire: boolean = false;
 
 	// Projects
 	const projects: {
@@ -56,9 +56,24 @@ export const load = async ({ request }: any) => {
 			link: 'https://cordx.lol/',
 			image: '/cordx.png',
 			flair: ['DEVELOPER']
+		},
+		{
+			name: 'NodeByte LTD',
+			description:
+				'NodeByte LTD is your premier partner for top-tier services, dedicated to exceeding your expectations and driving your success.',
+			link: 'https://nodebyte.co.uk/',
+			image: 'https://nodebyte.co.uk/_next/image?url=%2Flogo.png&w=48&q=75',
+			flair: ['SENIOR TECHNICAL ANALYST']
+		},
+		{
+			name: 'NetSocial',
+			description: 'Connect. Share. Grow.',
+			link: 'https://netsocial.app/',
+			image: 'https://cdn.netsocial.app/logos/netsocial.png',
+			flair: ['TABLE', 'DODP', 'DEVELOPER', 'QAQC']
 		}
 	];
-	
+
 	// Tech Stack
 	const stack: {
 		name: string;
@@ -71,6 +86,13 @@ export const load = async ({ request }: any) => {
 			description: 'Svelte is a free and open-source component-based front-end software framework.',
 			link: 'https://kit.svelte.dev/',
 			image: 'https://a.storyblok.com/f/88751/1702x2049/619c584101/svelte_logo.png'
+		},
+		{
+			name: 'Next.JS',
+			description:
+				'Next.js is a popular React framework that enables server-side rendering and static site generation.',
+			link: 'https://nextjs.org/',
+			image: 'fa-brands fa-react'
 		},
 		{
 			name: 'NodeJS',
@@ -162,6 +184,11 @@ export const load = async ({ request }: any) => {
 			name: 'Github',
 			url: 'https://github.com/selectdev',
 			icon: 'fab fa-github'
+		},
+		{
+			name: 'Twitter/X',
+			url: 'https://twitter.com/heypurrquinox',
+			icon: 'fab fa-twitter'
 		}
 	];
 

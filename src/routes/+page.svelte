@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Meta from '../components/Meta.svelte';
 	import Footer from '../components/Footer.svelte';
+	import Card from '../components/Card.svelte';
 	import type { PageData } from './$types';
+	import Section from '../components/Section.svelte';
 
 	export let data: PageData;
 </script>
@@ -45,193 +47,81 @@
 	<div class="p-3" />
 
 	<!-- Projects -->
-	<div id="projects">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Projects</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Here are some of the projects I've worked on.
-		</p>
-
+	<Section Title="Projects" Description="Here are some of the projects I've worked on.">
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.projects as project}
 				<div class="self-auto">
-					<div
-						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
-					>
-						<a href={project.link}>
-                                                        <div class="flex">
-							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
-									>{flair}</span
-								>
-							   {/each}
-                                                        </div>
-
-							<div class="mt-4 flex">
-								<img
-									src={project.image}
-									class="h-[30px] bg-surface-700 rounded-full"
-									height="30px"
-									alt="{project.name} logo"
-								/>
-
-								<h5
-									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
-								>
-									{project.name}
-								</h5>
-							</div>
-
-							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
-						</a>
-					</div>
+					<Card
+						Name={project.name}
+						Description={project.description}
+						Image={project.image}
+						Link={project.link}
+						Flairs={project.flair}
+					/>
 				</div>
 			{/each}
 		</div>
-	</div>
+	</Section>
 
-	<div class="p-3" />
-
-        
 	<!-- Companies -->
-	<div id="companies">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Companies</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Here are some of the companies i work for!
-		</p>
-
+	<Section Title="Companies" Description="Hello, there. I work with these companies!">
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-			{#each data.companies as project}
+			{#each data.companies as company}
 				<div class="self-auto">
-					<div
-						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
-					>
-						<a href={project.link}>
-                                                        <div class="flex">
-							   {#each project.flair as flair}
-								<span class="first:ml-0 ml-2 bg-primary-600 text-white p-1 text-xs px-2 rounded-md font-cabin font-bold"
-									>{flair}</span
-								>
-							   {/each}
-                                                        </div>
-
-							<div class="mt-4 flex">
-								<img
-									src={project.image}
-									class="h-[30px] bg-surface-700 rounded-full"
-									height="30px"
-									alt="{project.name} logo"
-								/>
-
-								<h5
-									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
-								>
-									{project.name}
-								</h5>
-							</div>
-
-							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{project.description}</p>
-						</a>
-					</div>
+					<Card
+						Name={company.name}
+						Description={company.description}
+						Image={company.image}
+						Link={company.link}
+						Flairs={company.flair}
+					/>
 				</div>
 			{/each}
 		</div>
-	</div>
-
-	<div class="p-3" />
+	</Section>
 
 	<!-- Tech Stack -->
-	<div id="tech-stack">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Tech Stack</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Oh, hello there. This is the stack, that i use when working on projects.
-		</p>
-
+	<Section
+		Title="Tech Stack"
+		Description="Oh, hello there. This is the stack, that i use when working on projects."
+	>
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-			{#each data.stack as p}
+			{#each data.stack as stack}
 				<div class="self-auto">
-					<div
-						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
-					>
-						<a href={p.link}>
-							<div class="flex">
-								{#if p.image.startsWith('https://')}
-									<img
-										src={p.image}
-										class="h-[30px] bg-surface-700 rounded-full"
-										height="30px"
-										alt="{p.name} logo"
-									/>
-								{:else}
-									<i class="mt-3 {p.image} fa-xl max-h-[30px] text-white rounded-full" />
-								{/if}
-
-								<h5
-									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
-								>
-									{p.name}
-								</h5>
-							</div>
-
-							<p class="mt-2 text-base font-monster font-semibold text-secondary-500">{p.description}</p>
-						</a>
-					</div>
+					<Card
+						Name={stack.name}
+						Description={stack.description}
+						Image={stack.image}
+						Link={stack.link}
+						Flairs={[]}
+					/>
 				</div>
 			{/each}
 		</div>
-	</div>
-
-	<div class="p-3" />
+	</Section>
 
 	<!-- Testimonials -->
-	<div id="testimonials">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Testimonials</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Here are some testimonials provided by some of my clients!
-		</p>
-
+	<Section
+		Title="Testimonials"
+		Description="Here are some testimonials provided by some of my clients!"
+	>
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.testimonials as testimonial}
 				<div class="self-auto">
-					<div
-						class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
-					>
-						<a href={testimonial.link}>
-							<div class="flex">
-								<img
-									src={testimonial.image}
-									class="h-[30px] bg-surface-700 rounded-full"
-									height="30px"
-									alt="{testimonial.name} logo"
-								/>
-
-								<h5
-									class="ml-2 text-lg font-cabin font-bold overflow-x-auto tracking-tight text-secondary-400"
-								>
-									{testimonial.name} <span class="opacity-60">(with {testimonial.project})</span>
-								</h5>
-							</div>
-
-							<p class="mt-2 text-sm md:text-base font-monster font-semibold text-secondary-500">
-								{testimonial.description}
-							</p>
-						</a>
-					</div>
+					<Card
+						Name={testimonial.name}
+						Description={testimonial.description}
+						Image={testimonial.image}
+						Link={testimonial.link}
+						Flairs={[]}
+					/>
 				</div>
 			{/each}
 		</div>
-	</div>
-
-	<div class="p-3" />
+	</Section>
 
 	<!-- PC Specs -->
-	<div id="pc-specs">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">PC Specs</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Here are some of the specifications of my PC.
-		</p>
-
-		<div class="mt-2" />
-
+	<Section Title="PC Specs" Description="Here are some of the specifications of my PC.">
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.pcSpecs) as spec}
 				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
@@ -244,19 +134,10 @@
 		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
 			* Specifications are prone to change.
 		</p>
-	</div>
-
-	<div class="p-3" />
+	</Section>
 
 	<!-- Peripherals -->
-	<div id="peripherals">
-		<h1 class="text-primary-600 text-3xl font-cabin font-bold tracking-tight md:text-4xl">Peripherals</h1>
-		<p class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl">
-			Here are some of my peripherals.
-		</p>
-
-		<div class="mt-2" />
-
+	<Section Title="Peripherals" Description="Here are some of my peripherals.">
 		<ol class="ml-6 list-disc">
 			{#each Object.entries(data.peripherals) as spec}
 				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
@@ -266,8 +147,10 @@
 			{/each}
 		</ol>
 
-		<p class="text-primary-300 font-cabin font-semibold tracking-tight">* Peripherals are prone to change.</p>
-	</div>
+		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
+			* Peripherals are prone to change.
+		</p>
+	</Section>
 </main>
 
 <!-- Footer -->

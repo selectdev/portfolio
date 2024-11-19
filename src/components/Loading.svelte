@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 
 	let words: String[] = [
 		'Hello',
@@ -21,31 +21,35 @@
 	let intervalDuration: number = 200;
 
 	const dispatch = createEventDispatcher();
-
 	const switchWord = () => {
 		intervalDuration = 200 - index * 10;
 
 		clearInterval(run);
 
 		if (index >= words.length - 1) {
-			if (browser) {
-				const cum = document.getElementById('bar');
-				cum?.classList.remove('hidden');
-				cum?.classList.add('stretch');
-
-				setTimeout(() => dispatch('close'), 2000);
-			}
+			if (browser) close();
 		} else index++;
 
 		word = words[index];
 		run = setInterval(switchWord, intervalDuration);
 	};
 
+	const close = () => {
+		const cum = document.getElementById('bar');
+		cum?.classList.remove('hidden');
+		cum?.classList.add('stretch');
+
+		setTimeout(() => dispatch('close'), 2000);
+	};
+
 	let run = setInterval(switchWord, intervalDuration);
+	onMount(() => {
+		document.body.addEventListener('click', close);
+	});
 </script>
 
-<div class="grid place-items-center min-h-screen overflow-none no-scrollbar">
-	<ol class="list-disc no-scrollbar">
+<div class="bg-purple-600/50 grid place-items-center min-h-screen overflow-none">
+	<ol class="list-disc">
 		<li class="text-white font-cursive non-italic font-extrabold text-5xl no-scrollbar">
 			{word}
 		</li>
