@@ -2,6 +2,7 @@
 	export let Name: string;
 	export let Description: string;
 	export let Image: string | null = null;
+        export let LongImage: string | null = null;
 	export let Link: string | null = null;
 	export let Flairs: string[] | null = null;
 </script>
