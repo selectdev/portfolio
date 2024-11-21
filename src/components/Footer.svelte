@@ -18,6 +18,15 @@
 				};
 			})
 		},
+                {
+                        name: 'Companies',
+                        items: data.companies.map((p) => {
+				return {
+					name: p.name,
+					url: p.link
+				};
+			})
+		},
 		{
 			name: 'Tech Stack',
 			items: data.stack.map((p) => {
