@@ -3,13 +3,14 @@
 	export let Description: string;
 	export let Image: string | null;
 	export let Link: string = '';
-	export let Flairs: string[];
+	export let Flairs: string[] | null = null;
 </script>
 
 <div
 	class="block max-w-sm p-3 border rounded-md shadow bg-surface-700 border-surface-800 hover:bg-surface-600"
 >
 	<a href={Link}>
+                {#if Flairs && Flairs.length != 0}
 		<div class="flex">
 			{#each Flairs as flair}
 				<span
@@ -18,8 +19,9 @@
 				>
 			{/each}
 		</div>
+                {/if}
 
-		<div class="mt-4 flex">
+		<div class="{Flairs && Flairs.length != 0 ? 'mt-4': ''} flex">
 			{#if Image}
 				{#if Image.startsWith('fa-')}
 					<i class="mt-3 fa-xl max-h-[30px] text-white rounded-full {Image}"></i>
