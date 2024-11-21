@@ -88,7 +88,7 @@ export const load = async ({ request }: any) => {
 			image: 'https://a.storyblok.com/f/88751/1702x2049/619c584101/svelte_logo.png'
 		},
 		{
-			name: 'Next.JS',
+			name: 'NextJS',
 			description:
 				'Next.js is a popular React framework that enables server-side rendering and static site generation.',
 			link: 'https://nextjs.org/',
@@ -186,7 +186,7 @@ export const load = async ({ request }: any) => {
 			icon: 'fab fa-github'
 		},
 		{
-			name: 'Twitter/X',
+			name: 'Twitter',
 			url: 'https://twitter.com/heypurrquinox',
 			icon: 'fab fa-twitter'
 		}
