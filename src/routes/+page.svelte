@@ -92,21 +92,18 @@
 		</div>
 	</Section>
 
-    <!-- Blog Posts -->
-    <Section
-		Title="Blog Posts"
-		Description="Oh, hello there. Here are my latest blog posts!"
-	>
+	<!-- Blog Posts -->
+	<Section Title="Blog Posts" Description="Oh, hello there. Here are my latest blog posts!">
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.blogPosts as post}
 				<div class="self-auto">
 					<Card
 						Name={post.title}
 						Description={post.short_description}
-                        Image={post.author.image}
+						Image={post.author.image}
 						LongImage={post.image}
-						Link="/blog/view/{post.title.toLowerCase().replaceAll(' ', '-')}"
-Flairs={post.flairs}
+						Link="/blog/view/{post.id}"
+						Flairs={post.flairs}
 					/>
 				</div>
 			{/each}
