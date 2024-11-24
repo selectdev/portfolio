@@ -106,6 +106,7 @@
                         Image={post.author.image}
 						LongImage={post.image}
 						Link="/blog/view/{post.title.toLowerCase().replaceAll(' ', '-')}"
+Flairs={post.flairs}
 					/>
 				</div>
 			{/each}
