@@ -149,6 +149,41 @@ export const load = async ({ request }: any) => {
 		}
 	];
 
+	// Blog Posts
+	const blogPosts: {
+		title: string;
+		image: string;
+		author: {
+			name: string;
+			biography: string;
+			image: string;
+			badges: string[];
+		};
+		short_description: string;
+		long_description: string;
+		createdAt: Date;
+		updatedAt: Date;
+		flairs: string[];
+	}[] = [
+		{
+			title: 'Test Blog Post',
+			image: '/logo.png',
+			author: {
+				name: 'selectdev',
+				biography:
+					"I'm a 18-year-old full-stack developer with six years of experience, working with a variety of programming languages and technologies. I'm passionate about technology and excited to start a new project.",
+				image: '/logo.png',
+				badges: ['fa fa-verified']
+			},
+			short_description: 'This is a test blog post',
+			long_description:
+				'This is a test post. This is a test post. This is a test post. This is a test post. This is a test post. This is a test post. This is a test post. This is a test post. This is a test post. This is a test post.',
+			createdAt: new Date('2021-01-01'),
+			updatedAt: new Date('2022-01-01'),
+			flairs: ['TEST']
+		}
+	];
+
 	// PC Specs
 	const pcSpecs: { [key: string]: string } = {
 		Case: 'Corsair iCUE 4000X RGB',
@@ -198,6 +233,7 @@ export const load = async ({ request }: any) => {
 		companies,
 		stack,
 		testimonials,
+        blogPosts,
 		pcSpecs,
 		peripherals,
 		socials

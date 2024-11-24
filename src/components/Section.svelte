@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Breadcrumb from "./Breadcrumb.svelte";
+	import Breadcrumb from './Breadcrumb.svelte';
 
 	export let Title: string;
 	export let Description: string;
