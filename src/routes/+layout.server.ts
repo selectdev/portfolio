@@ -154,7 +154,6 @@ export const load = async ({ request }: any) => {
 		Case: 'Corsair iCUE 4000X RGB',
 		Storage: 'SAMSUNG 980 PRO (SSD) - 2TB',
 		Motherboard: 'MSI MAG B550 Tomahawk MAX WiFi',
-		//'Graphics Card': 'GeForce RTX 4060',
 		CPU: 'AMD Ryzen 7 5700G',
 		'CPU Cooler': 'NZXT Kraken Elite 240',
 		'Power Supply': 'Corsair RM750x',
@@ -165,8 +164,7 @@ export const load = async ({ request }: any) => {
 	const peripherals: { [key: string]: string } = {
 		Microphone: 'MAONO DGM20S',
 		'Keyboard/Mouse Combo': 'Logitech MK470',
-		Mousepad: 'Logitech Desk Mat (Studio series - Mid Grey)',
-		'Monitor (TV)': '32" TCL Roku TV'
+		Mousepad: 'Logitech Desk Mat (Studio series - Mid Grey)'
 	};
 
 	// Social Media

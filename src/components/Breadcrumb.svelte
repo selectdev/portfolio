@@ -17,9 +17,9 @@
 		on:error={ImageLoadError}
 	/>
 
-	<h2 class="ml-2 text-primary-400 font-bold text-4xl">{Title}</h2>
+	<h2 class="ml-2 text-primary-400 font-monster font-bold text-4xl">{Title}</h2>
 </div>
 
-<h6 class="mt-2 text-primary-200 font-bold text-base">
+<h6 class="mt-2 text-primary-200 font-cabin font-bold text-base">
 	{@html Description}
 </h6>

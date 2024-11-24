@@ -26,6 +26,13 @@
 		href: string | (() => void);
 	}[] = [
 		{
+			name: 'Crimson (default)',
+			href: () => {
+				document.cookie = 'theme=crimson';
+				document.body.setAttribute('data-theme', 'crimson');
+			}
+		},
+		{
 			name: 'Skeleton',
 			href: () => {
 				document.cookie = 'theme=skeleton';
@@ -86,13 +93,6 @@
 			href: () => {
 				document.cookie = 'theme=gold-nouveau';
 				document.body.setAttribute('data-theme', 'gold-nouveau');
-			}
-		},
-		{
-			name: 'Crimson (default)',
-			href: () => {
-				document.cookie = 'theme=crimson';
-				document.body.setAttribute('data-theme', 'crimson');
 			}
 		}
 	];

@@ -18,9 +18,9 @@
 				};
 			})
 		},
-                {
-                        name: 'Companies',
-                        items: data.companies.map((p) => {
+		{
+			name: 'Companies',
+			items: data.companies.map((p) => {
 				return {
 					name: p.name,
 					url: p.link
