@@ -92,7 +92,7 @@
 		</div>
 	</Section>
 
-	<!-- Blog Posts -->
+	<!-- Blog Posts
 	<Section Title="Blog Posts" Description="Oh, hello there. Here are my latest blog posts!">
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.blogPosts as post}
@@ -109,6 +109,7 @@
 			{/each}
 		</div>
 	</Section>
+    -->
 
 	<!-- PC Specs -->
 	<Section Title="PC Specs" Description="Here are some of the specifications of my PC.">

@@ -1,8 +1,4 @@
 import cookie from 'cookie';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-prisma.$connect();
 
 export const load = async ({ request }: any) => {
 	// Cookies
@@ -170,12 +166,8 @@ export const load = async ({ request }: any) => {
 		createdAt: Date;
 		updatedAt: Date | null;
 		flairs: string[];
-	}[] = await prisma.blogPosts.findMany({
-		include: {
-			author: true
-		}
-	});
-
+	}[] = [];
+    
 	// PC Specs
 	const pcSpecs: { [key: string]: string } = {
 		Case: 'Corsair iCUE 4000X RGB',
