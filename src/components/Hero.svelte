@@ -21,7 +21,7 @@
 		I'm a {data.age}-year-old
 		<span class="text-secondary-300 font-bold">full-stack developer</span>
 		with
-		<span class="text-secondary-300 font-bold">six years of experience</span>, working with a
+		<span class="text-secondary-300 font-bold">seven years of experience</span>, working with a
 		variety of
 		<span class="text-secondary-300 font-bold">programming languages</span>
 		and <span class="text-secondary-300 font-bold">technologies</span>. I'm passionate about
