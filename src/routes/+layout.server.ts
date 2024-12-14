@@ -1,11 +1,42 @@
 import cookie from 'cookie';
+import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN } from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
 	const cookies = cookie.parse(request.headers.get('cookie') || '');
 
+	// Calculate Age
+	const calculateAge = (birthday: string) => {
+		const birthDate = new Date(birthday);
+		const today = new Date();
+
+		let p = today.getFullYear() - birthDate.getFullYear();
+		if (
+			today.getMonth() < birthDate.getMonth() ||
+			(today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
+		)
+			p--;
+		return p;
+	};
+
+	// Number = Word
+	const numberWords: { [key: number]: string } = {
+		0: 'zero',
+		1: 'one',
+		2: 'two',
+		3: 'three',
+		4: 'four',
+		5: 'five',
+		6: 'six',
+		7: 'seven',
+		8: 'eight',
+		9: 'nine'
+	};
+
 	// Main
-	const age: number = 18;
+	const age: number = calculateAge('2006-07-11');
+	const experience: string =
+		numberWords[calculateAge('2017-12-11')] || String(calculateAge('2017-12-11'));
 	const availableForHire: boolean = false;
 
 	// Projects
@@ -22,7 +53,7 @@ export const load = async ({ request }: any) => {
 				"Hey, neurodivergent friends! Tired of your thoughts being dismissed? Welcome to Sparkyflight – the virtual haven where your ideas soar without fear of judgment. Speak your mind, share your brilliance, and let's fly high together!",
 			link: 'https://sparkyflight.xyz/',
 			image: 'https://sparkyflight.xyz/logo.png',
-			flair: ['FOUNDER']
+			flair: ['OWNER', 'FOUNDER']
 		},
 		{
 			name: 'AntiRaid',
@@ -30,7 +61,7 @@ export const load = async ({ request }: any) => {
 				'AntiRaid is a Automatic Moderation Service created to protect your Discord Server from threats, unsafe bots and spamming using our advanced technology!',
 			link: 'https://antiraid.xyz/',
 			image: 'https://antiraid.xyz/logo.webp',
-			flair: ['EXECUTIVE DIRECTOR']
+			flair: ['OWNER', 'EXECUTIVE DIRECTOR']
 		}
 	];
 
@@ -70,7 +101,7 @@ export const load = async ({ request }: any) => {
 			description: 'Connect. Share. Grow.',
 			link: 'https://netsocial.app/',
 			image: 'https://cdn.netsocial.app/logos/netsocial.png',
-			flair: ['TABLE', 'DODP', 'DEVELOPER', 'QAQC']
+			flair: ['HIGH TABLE', 'DODP']
 		}
 	];
 
@@ -167,7 +198,7 @@ export const load = async ({ request }: any) => {
 		updatedAt: Date | null;
 		flairs: string[];
 	}[] = [];
-    
+
 	// PC Specs
 	const pcSpecs: { [key: string]: string } = {
 		Case: 'Corsair iCUE 4000X RGB',
@@ -209,9 +240,49 @@ export const load = async ({ request }: any) => {
 		}
 	];
 
+	// Spotify
+	const params = new URLSearchParams();
+	params.append('grant_type', 'refresh_token');
+	params.append('refresh_token', REFRESH_TOKEN);
+
+	const auth = await fetch('https://accounts.spotify.com/api/token', {
+		method: 'POST',
+		headers: {
+			Authorization: `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: params.toString()
+	}).then(async (a) => {
+		if (!a.ok) {
+			const errorData = await a.json();
+			console.error('Failed to refresh access token:', errorData);
+			throw new Error(`HTTP error! status: ${a.status}`);
+		} else return await a.json();
+	});
+
+	let currentlyListening = await fetch(
+		'https://api.spotify.com/v1/me/player/currently-playing?market=US',
+		{
+			headers: {
+				Authorization: 'Bearer ' + auth.access_token
+			}
+		}
+	).then(async (a) => {
+		if (!a.ok) {
+			const errorData = await a.json();
+			console.error('Failed to refresh access token:', errorData);
+			throw new Error(`HTTP error! status: ${a.status}`);
+		} else {
+			const d = await a.text();
+			if (d === null || d === '') return null;
+			else return JSON.parse(d);
+		}
+	});
+
 	// Primary data
 	const data = {
 		age,
+		experience,
 		availableForHire,
 		projects,
 		companies,
@@ -220,7 +291,8 @@ export const load = async ({ request }: any) => {
 		blogPosts,
 		pcSpecs,
 		peripherals,
-		socials
+		socials,
+		currentlyListening
 	};
 
 	// Return everything, render page.

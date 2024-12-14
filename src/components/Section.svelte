@@ -5,7 +5,7 @@
 	export let Description: string;
 </script>
 
-<div id={Title.toLowerCase()}>
+<div id={Title.toLowerCase().replaceAll(' ', '_')}>
 	<!-- Breadcrumb -->
 	<Breadcrumb {Title} {Description} />
 

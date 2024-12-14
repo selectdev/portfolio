@@ -5,12 +5,14 @@
 	import type { PageData } from './$types';
 	import Section from '../components/Section.svelte';
 	import Hero from '../components/Hero.svelte';
+	import ListCard from '../components/ListCard.svelte';
+	import ErrorText from '../components/ErrorText.svelte';
 
 	export let data: PageData;
 </script>
 
 <Meta
-	Description="I'm a {data.age}-year-old full-stack developer with seven years of experience, working with a variety of programming languages and technologies. I'm passionate about technology and excited to start a new project. {data.availableForHire
+	Description="I'm a {data.age}-year-old full-stack developer with {data.experience} years of experience, working with a variety of programming languages and technologies. I'm passionate about technology and excited to start a new project. {data.availableForHire
 		? "Right now, I'm available for hire and ready to bring fresh ideas to your team."
 		: ''}"
 />
@@ -21,7 +23,7 @@
 	<Hero {data} />
 
 	<!-- Projects -->
-	<Section Title="Projects" Description="Here are some of the projects I've worked on.">
+	<Section Title="Projects" Description="Here are some of my projects.">
 		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.projects as project}
 				<div class="self-auto">
@@ -92,35 +94,32 @@
 		</div>
 	</Section>
 
-	<!-- Blog Posts
+	<!-- Blog Posts -->
 	<Section Title="Blog Posts" Description="Oh, hello there. Here are my latest blog posts!">
-		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-			{#each data.blogPosts as post}
-				<div class="self-auto">
-					<Card
-						Name={post.title}
-						Description={post.short_description}
-						Image={post.author.image}
-						LongImage={post.image}
-						Link="/blog/view/{post.id}"
-						Flairs={post.flairs}
-					/>
-				</div>
-			{/each}
-		</div>
+		{#if !data.blogPosts || data.blogPosts.length === 0}
+			<div class="p-1" />
+			<ErrorText Title="Sorry!" Description="We currently have no blog posts to show!" />
+		{:else}
+			<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+				{#each data.blogPosts as post}
+					<div class="self-auto">
+						<Card
+							Name={post.title}
+							Description={post.short_description}
+							Image={post.author.image}
+							LongImage={post.image}
+							Link="/blog/view/{post.id}"
+							Flairs={post.flairs}
+						/>
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</Section>
-    -->
 
 	<!-- PC Specs -->
 	<Section Title="PC Specs" Description="Here are some of the specifications of my PC.">
-		<ol class="ml-6 list-disc">
-			{#each Object.entries(data.pcSpecs) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
-					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
-					{spec[1]}
-				</li>
-			{/each}
-		</ol>
+		<ListCard Data={data.pcSpecs} />
 
 		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
 			* Specifications are prone to change.
@@ -129,14 +128,7 @@
 
 	<!-- Peripherals -->
 	<Section Title="Peripherals" Description="Here are some of my peripherals.">
-		<ol class="ml-6 list-disc">
-			{#each Object.entries(data.peripherals) as spec}
-				<li class="ml-3 pt-1 text-primary-400 font-monster font-bold italic text-md md:text-xl">
-					<span class="font-cabin text-primary-500 tracking-tight">{spec[0]}:</span>
-					{spec[1]}
-				</li>
-			{/each}
-		</ol>
+		<ListCard Data={data.peripherals} />
 
 		<p class="text-primary-300 font-cabin font-semibold tracking-tight">
 			* Peripherals are prone to change.
