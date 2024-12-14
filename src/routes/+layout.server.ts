@@ -1,5 +1,5 @@
 import cookie from 'cookie';
-import { VITE_PRIVATE_CLIENT_ID, VITE_PRIVATE_CLIENT_SECRET, VITE_PRIVATE_REFRESH_TOKEN } from '$env/dynamic/private';
+import { PRIVATE_CLIENT_ID, PRIVATE_CLIENT_SECRET, PRIVATE_REFRESH_TOKEN } from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
