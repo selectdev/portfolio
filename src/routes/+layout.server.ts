@@ -1,5 +1,5 @@
 import cookie from 'cookie';
-import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN } from '$env/static/private';
+import { VITE_PRIVATE_CLIENT_ID, VITE_PRIVATE_CLIENT_SECRET, VITE_PRIVATE_REFRESH_TOKEN } from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
@@ -242,13 +242,13 @@ export const load = async ({ request }: any) => {
 
 	// Spotify
 	const params = new URLSearchParams();
-	params.append('grant_type', 'refresh_token');
-	params.append('refresh_token', REFRESH_TOKEN);
+	params.append('grant_type', 'VITE_PRIVATE_REFRESH_TOKEN');
+	params.append('VITE_PRIVATE_REFRESH_TOKEN', VITE_PRIVATE_REFRESH_TOKEN);
 
 	const auth = await fetch('https://accounts.spotify.com/api/token', {
 		method: 'POST',
 		headers: {
-			Authorization: `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
+			Authorization: `Basic ${Buffer.from(`${VITE_PRIVATE_CLIENT_ID}:${VITE_PRIVATE_CLIENT_SECRET}`).toString('base64')}`,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
 		body: params.toString()
