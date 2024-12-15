@@ -1,5 +1,5 @@
 import cookie from 'cookie';
-import { env } from '$env/static/private';
+import env from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
