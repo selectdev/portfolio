@@ -1,5 +1,9 @@
 import cookie from 'cookie';
-import { VITE_PRIVATE_CLIENT_ID as PRIV_ID, VITE_PRIVATE_CLIENT_SECRET as PRIV_SEC, VITE_PRIVATE_REFRESH_TOKEN as PRIV_TOKEN} from "$env/static/private";
+import {
+	VITE_PRIVATE_CLIENT_ID as PRIV_ID,
+	VITE_PRIVATE_CLIENT_SECRET as PRIV_SEC,
+	VITE_PRIVATE_REFRESH_TOKEN as PRIV_TOKEN
+} from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
@@ -240,15 +244,15 @@ export const load = async ({ request }: any) => {
 		}
 	];
 
-	/* Spotify
+	// Spotify
 	const params = new URLSearchParams();
 	params.append('grant_type', 'refresh_token');
-	params.append('refresh_token', import.meta.env.VITE_PRIVATE_REFRESH_TOKEN);
+	params.append('refresh_token', PRIV_TOKEN);
 
 	const auth = await fetch('https://accounts.spotify.com/api/token', {
 		method: 'POST',
 		headers: {
-			Authorization: `Basic ${Buffer.from(`${import.meta.env.VITE_PRIVATE_CLIENT_ID}:${import.meta.env.VITE_PRIVATE_CLIENT_SECRET}`).toString('base64')}`,
+			Authorization: `Basic ${Buffer.from(`${PRIV_ID}:${PRIV_SEC}`).toString('base64')}`,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
 		body: params.toString()
@@ -277,7 +281,7 @@ export const load = async ({ request }: any) => {
 			if (d === null || d === '') return null;
 			else return JSON.parse(d);
 		}
-	}); */
+	});
 
 	// Primary data
 	const data = {
@@ -292,10 +296,7 @@ export const load = async ({ request }: any) => {
 		pcSpecs,
 		peripherals,
 		socials,
-		currentlyListening: null,
-        env: {
-            PRIV_ID, PRIV_SEC, PRIV_TOKEN
-        }
+		currentlyListening
 	};
 
 	// Return everything, render page.
