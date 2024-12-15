@@ -1,9 +1,4 @@
 import cookie from 'cookie';
-import {
-	VITE_PRIVATE_CLIENT_ID as PRIV_ID,
-	VITE_PRIVATE_CLIENT_SECRET as PRIV_SEC,
-	VITE_PRIVATE_REFRESH_TOKEN as PRIV_TOKEN
-} from '$env/static/private';
 
 export const load = async ({ request }: any) => {
 	// Cookies
@@ -295,8 +290,7 @@ export const load = async ({ request }: any) => {
 		blogPosts,
 		pcSpecs,
 		peripherals,
-		socials,
-		currentlyListening: null
+		socials
 	};
 
 	// Return everything, render page.
