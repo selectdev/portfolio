@@ -244,7 +244,7 @@ export const load = async ({ request }: any) => {
 		}
 	];
 
-	// Spotify
+	/* Spotify
 	const params = new URLSearchParams();
 	params.append('grant_type', 'refresh_token');
 	params.append('refresh_token', PRIV_TOKEN);
@@ -281,7 +281,7 @@ export const load = async ({ request }: any) => {
 			if (d === null || d === '') return null;
 			else return JSON.parse(d);
 		}
-	});
+	});*/
 
 	// Primary data
 	const data = {
@@ -296,7 +296,7 @@ export const load = async ({ request }: any) => {
 		pcSpecs,
 		peripherals,
 		socials,
-		currentlyListening
+		currentlyListening: null
 	};
 
 	// Return everything, render page.
