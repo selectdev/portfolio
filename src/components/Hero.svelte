@@ -31,7 +31,7 @@
 	</p>
 
 	<div class="p-2" />
-	<SpotifyCurrentListening data={data.currentlyListening} />
+	<!--<SpotifyCurrentListening data={data.currentlyListening} />-->
 </div>
 
 <div class="p-3" />

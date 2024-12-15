@@ -9,6 +9,7 @@
 	import ErrorText from '../components/ErrorText.svelte';
 
 	export let data: PageData;
+    console.log(data.currentlyListening);
 </script>
 
 <Meta
