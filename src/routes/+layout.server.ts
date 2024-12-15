@@ -1,5 +1,6 @@
 import cookie from 'cookie';
-import env from '$env/static/private';
+import { VITE_PRIVATE_CLIENT_ID as PUBLIC_ID, VITE_PRIVATE_CLIENT_SECRET as PUBLIC_SEC, VITE_PRIVATE_REFRESH_TOKEN as PUBLIC_TOKEN} from "$env/static/public";
+import { VITE_PRIVATE_CLIENT_ID as PRIV_ID, VITE_PRIVATE_CLIENT_SECRET as PRIV_SEC, VITE_PRIVATE_REFRESH_TOKEN as PRIV_TOKEN} from "$env/static/private";
 
 export const load = async ({ request }: any) => {
 	// Cookies
@@ -293,7 +294,9 @@ export const load = async ({ request }: any) => {
 		peripherals,
 		socials,
 		currentlyListening: null,
-        env: env
+        env: {
+            PUBLIC_ID, PUBLIC_SEC, PUBLIC_TOKEN, PRIV_ID, PRIV_SEC, PRIV_TOKEN
+        }
 	};
 
 	// Return everything, render page.
