@@ -239,44 +239,14 @@ export const load = async ({ request }: any) => {
 		}
 	];
 
-	/* Spotify
-	const params = new URLSearchParams();
-	params.append('grant_type', 'refresh_token');
-	params.append('refresh_token', PRIV_TOKEN);
-
-	const auth = await fetch('https://accounts.spotify.com/api/token', {
-		method: 'POST',
-		headers: {
-			Authorization: `Basic ${Buffer.from(`${PRIV_ID}:${PRIV_SEC}`).toString('base64')}`,
-			'Content-Type': 'application/x-www-form-urlencoded'
-		},
-		body: params.toString()
-	}).then(async (a) => {
-		if (!a.ok) {
-			const errorData = await a.json();
-			console.error('Failed to refresh access token:', errorData);
-			throw new Error(`HTTP error! status: ${a.status}`);
-		} else return await a.json();
-	});
-
-	let currentlyListening = await fetch(
-		'https://api.spotify.com/v1/me/player/currently-playing?market=US',
-		{
-			headers: {
-				Authorization: 'Bearer ' + auth.access_token
-			}
+	// Spotify
+	const currentlyListening = await fetch('https://api.selectdev.me/spotify/@current').then(
+		async (a) => {
+			const d = await a.json();
+			if (d.error) return null;
+			else return d;
 		}
-	).then(async (a) => {
-		if (!a.ok) {
-			const errorData = await a.json();
-			console.error('Failed to refresh access token:', errorData);
-			throw new Error(`HTTP error! status: ${a.status}`);
-		} else {
-			const d = await a.text();
-			if (d === null || d === '') return null;
-			else return JSON.parse(d);
-		}
-	});*/
+	);
 
 	// Primary data
 	const data = {
@@ -290,7 +260,8 @@ export const load = async ({ request }: any) => {
 		blogPosts,
 		pcSpecs,
 		peripherals,
-		socials
+		socials,
+		currentlyListening
 	};
 
 	// Return everything, render page.
