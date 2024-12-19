@@ -6,7 +6,7 @@
 	<div class="group">
 		<!-- Minimal -->
 		<a
-			class="inline-block border shadow-md bg-black px-2 rounded-md group-hover:hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+			class="inline-block border shadow-md bg-black px-2 py-1 rounded-md group-hover:hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300"
 			href={data.item.external_urls.spotify}
 		>
 			<div class="flex items-center">
@@ -19,15 +19,18 @@
 
 				<img
 					src={data.item.album.images[0].url}
-					class="ml-2 rounded-full h-8 w-8"
+					class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
 					alt="Cover Art"
 				/>
-				<p class="ml-1 font-cabin font-bold text-white text-base">
-					{data.item.name}
-				</p>
-				<p class="ml-1 font-monster text-xs font-medium text-white/75">
-					- {data.item.artists[0].name}
-				</p>
+
+				<div class="ml-2 flex flex-col justify-center">
+					<p class="font-cabin font-bold text-white text-base">
+						{data.item.name}
+					</p>
+					<p class="font-monster text-sm font-medium text-white/75">
+						{data.item.artists[0].name}
+					</p>
+				</div>
 			</div>
 		</a>
 
@@ -45,25 +48,27 @@
 				</div>
 			</div>
 
-			<div class="flex items-center justify-center">
+			<div class="mt-2 flex items-center justify-center">
 				<img
 					src={data.item.album.images[0].url}
-					class="flex ml-2 rounded-full h-12 w-12"
+					class="flex ml-2 rounded-sm h-[120px] w-[120px] border border-white/75 shadow-sm"
 					alt="Cover Art"
 				/>
-				<p class="ml-1 font-monster font-extrabold text-white text-md">{data.item.name}</p>
+			</div>
 
-				<div class="block">
-					<p class="ml-1 font-monster text-sm font-medium text-white/75">
-						- {data.item.artists[0].name}
-					</p>
-				</div>
+			<div class="flex flex-col items-center justify-center mt-2">
+				<p class="font-cabin text-center font-bold text-white text-base">
+					{data.item.name}
+				</p>
+				<p class="font-monster text-center text-sm font-medium text-white/75">
+					{data.item.artists[0].name}
+				</p>
 			</div>
 
 			<div class="flex items-center justify-center">
 				<button
-					class="mt-2 bg-[#1ED760] px-3 py-2 rounded-full text-white font-bold font-cabin border border-white border-opacity-5 hover:brightness-[80%] transition-all"
-					><i class="fa-brands fa-spotify"></i> Listen on Spotify!</button
+					class="mt-2 bg-[#1ED760]/75 px-3 py-2 rounded-full text-white font-bold font-cabin border border-white border-opacity-5 hover:brightness-[80%] transition-all"
+					>Listen on <span class="pl-0.5"><i class="fa-brands fa-spotify"></i> Spotify!</span></button
 				>
 			</div>
 		</a>
