@@ -10,7 +10,7 @@
 	import type { PageData } from './$types';
 	import { browser } from '$app/environment';
 
-	let loaded: boolean = true;
+	let loaded: boolean = false;
 	if ($page.url.pathname != '/') loaded = true;
 
 	export let data: PageData;
