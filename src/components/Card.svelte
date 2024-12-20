@@ -26,14 +26,14 @@
 			</div>
 		{/if}
 
-		<div class="{Flairs && Flairs.length != 0 ? 'mt-4' : ''} flex">
+		<div class="{Flairs && Flairs.length != 0 ? 'mt-3' : ''} flex items-center">
 			{#if Image}
 				{#if Image.startsWith('fa-')}
-					<i class="mt-3 fa-xl max-h-[30px] text-white rounded-full {Image}"></i>
+					<i class="mb-0.5 fa-xl max-h-[25px] text-white rounded-full {Image}"></i>
 				{:else}
 					<img
 						src={Image}
-						class="max-h-[30px] bg-surface-700 rounded-full"
+						class="max-h-[25px] bg-surface-700 rounded-full"
 						alt="{Name} logo"
 						loading="lazy"
 						on:error={ImageLoadError}
@@ -44,13 +44,15 @@
 			<h5
 				class="{Image
 					? 'ml-2'
-					: ''} text-lg font-monster font-semibold overflow-x-auto text-secondary-400"
+					: ''} text-md font-monster font-semibold overflow-x-auto text-secondary-400"
 			>
 				{Name}
 			</h5>
 		</div>
 
-		<p class="mt-2 text-base font-cabin font-semibold text-secondary-500">{Description}</p>
+		<p class="mt-1 text-base font-monster font-medium tracking-tight text-secondary-500">
+			{Description}
+		</p>
 
 		{#if LongImage}
 			<img

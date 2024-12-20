@@ -8,15 +8,16 @@
 <div id="about-me">
 	<span
 		class="bg-gradient-to-r font-cabin from-primary-500 via-primary-600 to-primary-700 text-white p-1 text-xs px-1.5 rounded-md font-bold uppercase"
-		>{data.availableForHire ? '' : 'X'}
-		{data.availableForHire ? 'Available for Hire!' : 'Not available for Hire!'}</span
+		>{data.availableForHire ? 'Available for Hire!' : 'Not available for Hire!'}</span
 	>
 
-	<h1 class="pt-1 text-primary-600 font-monster non-italic text-3xl md:text-4xl font-extrabold">
+	<h1
+		class="pt-1 text-primary-600 text-left font-monster non-italic text-3xl md:text-4xl font-extrabold"
+	>
 		Hello, there. I'm <span class="text-red-600">Zane</span>!
 	</h1>
 	<p
-		class="text-primary-300 font-monster font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
+		class="text-primary-300 text-left font-monster font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
 	>
 		I'm a {data.age}-year-old
 		<span class="text-secondary-300 font-bold">full-stack developer</span>
@@ -30,7 +31,6 @@
 			: ''}
 	</p>
 
-	<div class="p-2" />
 	<SpotifyCurrentListening data={data.currentlyListening} />
 </div>
 

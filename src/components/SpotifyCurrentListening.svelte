@@ -3,31 +3,36 @@
 	import chroma from 'chroma-js';
 	import { onMount } from 'svelte';
 
-	let textColor = '';
-	let gradientStart = '';
-	let gradientEnd = '';
+	let textColor: any = '';
+	let gradientStart: any = '';
+	let gradientEnd: any = '';
 
 	const setColors = async (url: string) => {
 		const vibrant = new Vibrant(url);
 		const palette = await vibrant.getPalette();
-		gradientStart = chroma(palette.DarkVibrant?.hex).darken(1).hex() || 'purple';
-		gradientEnd = chroma(palette.DarkMuted?.hex).darken(1).hex() || 'magenta';
+		gradientStart =
+			chroma((palette as any).DarkVibrant?.hex)
+				.darken(1)
+				.hex() || 'purple';
+		gradientEnd =
+			chroma((palette as any).DarkMuted?.hex)
+				.darken(1)
+				.hex() || 'magenta';
 
 		textColor = chroma.contrast(gradientStart, '#ffffff') < 4.5 ? '#000000' : '#ffffff';
 	};
 
 	export let data: any;
-
-	onMount(async () => {
-		await setColors(data.item.album.images[0].url);
-	});
+	if (data) onMount(async () => await setColors(data.item.album.images[0].url));
 </script>
 
 {#if data}
+	<div class="p-2" />
 	<div class="group">
 		<!-- Minimal -->
+		<!-- group-hover:hidden group-hover:opacity-0 -->
 		<a
-			class="inline-block border shadow-md px-2 py-1 rounded-md group-hover:hidden bg-opacity-80 opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+			class="inline-block border shadow-md px-2 py-1 rounded-md bg-opacity-80 opacity-100 transition-opacity duration-300"
 			style="background: linear-gradient(to right, {gradientStart}, {gradientEnd}); color: {textColor};"
 			href={data.item.external_urls.spotify}
 		>
@@ -58,7 +63,7 @@
 			</div>
 		</a>
 
-		<!-- Card -->
+		<!--
 		<a
 			class="hidden bg-gray-900 max-w-sm p-3 border shadow-md rounded-md group-hover:block opacity-100 group-hover:opacity-100 transition-opacity duration-300"
 			href={data.item.external_urls.spotify}
@@ -96,7 +101,7 @@
 					></button
 				>
 			</div>
-		</a>
+		</a>-->
 	</div>
 {/if}
 
