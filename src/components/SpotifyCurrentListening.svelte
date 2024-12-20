@@ -1,42 +1,66 @@
 <script lang="ts">
+	import { Vibrant } from 'node-vibrant/browser';
+	import chroma from 'chroma-js';
+	import { onMount } from 'svelte';
+
+	let textColor = '';
+	let gradientStart = '';
+	let gradientEnd = '';
+
+	const setColors = async (url: string) => {
+		const vibrant = new Vibrant(url);
+		const palette = await vibrant.getPalette();
+		gradientStart = chroma(palette.DarkVibrant?.hex).darken(1).hex() || 'purple';
+		gradientEnd = chroma(palette.DarkMuted?.hex).darken(1).hex() || 'magenta';
+
+		textColor = chroma.contrast(gradientStart, '#ffffff') < 4.5 ? '#000000' : '#ffffff';
+	};
+
 	export let data: any;
+
+	onMount(async () => {
+		await setColors(data.item.album.images[0].url);
+	});
 </script>
 
 {#if data}
 	<div class="group">
 		<!-- Minimal -->
 		<a
-			class="inline-block border shadow-md bg-black px-2 py-1 rounded-md group-hover:hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+			class="inline-block border shadow-md px-2 py-1 rounded-md group-hover:hidden bg-opacity-80 opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+			style="background: linear-gradient(to right, {gradientStart}, {gradientEnd}); color: {textColor};"
 			href={data.item.external_urls.spotify}
 		>
-			<div class="flex items-center">
-				<div class="boxContainer">
-					<div class="box box1"></div>
-					<div class="box box2"></div>
-					<div class="box box3"></div>
-					<div class="box box4"></div>
-				</div>
+			<div class="opacity-100">
+				<div class="flex items-center">
+					<div class="boxContainer">
+						<div class="box box1"></div>
+						<div class="box box2"></div>
+						<div class="box box3"></div>
+						<div class="box box4"></div>
+					</div>
 
-				<img
-					src={data.item.album.images[0].url}
-					class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
-					alt="Cover Art"
-				/>
+					<img
+						src={data.item.album.images[0].url}
+						class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
+						alt="Cover Art"
+					/>
 
-				<div class="ml-2 flex flex-col justify-center">
-					<p class="font-cabin font-bold text-white text-base">
-						{data.item.name}
-					</p>
-					<p class="font-monster text-sm font-medium text-white/75">
-						{data.item.artists[0].name}
-					</p>
+					<div class="ml-2 flex flex-col justify-center">
+						<p class="font-cabin font-bold text-base">
+							{data.item.name}
+						</p>
+						<p class="font-monster text-sm font-medium">
+							{data.item.artists[0].name}
+						</p>
+					</div>
 				</div>
 			</div>
 		</a>
 
 		<!-- Card -->
 		<a
-			class="hidden bg-black max-w-sm p-3 border shadow-md rounded-md group-hover:block opacity-100 group-hover:opacity-100 transition-opacity duration-300"
+			class="hidden bg-gray-900 max-w-sm p-3 border shadow-md rounded-md group-hover:block opacity-100 group-hover:opacity-100 transition-opacity duration-300"
 			href={data.item.external_urls.spotify}
 		>
 			<div class="flex items-center justify-center">
@@ -68,7 +92,8 @@
 			<div class="flex items-center justify-center">
 				<button
 					class="mt-2 bg-[#1ED760]/75 px-3 py-2 rounded-full text-white font-bold font-cabin border border-white border-opacity-5 hover:brightness-[80%] transition-all"
-					>Listen on <span class="pl-0.5"><i class="fa-brands fa-spotify"></i> Spotify!</span></button
+					>Listen on <span class="pl-0.5"><i class="fa-brands fa-spotify"></i> Spotify!</span
+					></button
 				>
 			</div>
 		</a>
