@@ -24,9 +24,9 @@
 
 	<!-- Projects -->
 	<Section Title="Projects" Description="Here are some of my projects.">
-		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
 			{#each data.projects as project}
-				<div class="self-auto">
+				<div class="break-inside-avoid mb-2">
 					<Card
 						Name={project.name}
 						Description={project.description}
@@ -41,9 +41,9 @@
 
 	<!-- Companies -->
 	<Section Title="Companies" Description="Hello, there. I work with these companies!">
-		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
 			{#each data.companies as company}
-				<div class="self-auto">
+				<div class="break-inside-avoid mb-2">
 					<Card
 						Name={company.name}
 						Description={company.description}
@@ -61,9 +61,9 @@
 		Title="Tech Stack"
 		Description="Oh, hello there. This is the stack, that i use when working on projects."
 	>
-		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
 			{#each data.stack as stack}
-				<div class="self-auto">
+				<div class="break-inside-avoid mb-2">
 					<Card
 						Name={stack.name}
 						Description={stack.description}
@@ -80,9 +80,9 @@
 		Title="Testimonials"
 		Description="Here are some testimonials provided by some of my clients!"
 	>
-		<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
 			{#each data.testimonials as testimonial}
-				<div class="self-auto">
+				<div class="break-inside-avoid mb-2">
 					<Card
 						Name={testimonial.name}
 						Description={testimonial.description}
@@ -100,9 +100,9 @@
 			<div class="p-1" />
 			<ErrorText Title="Sorry!" Description="We currently have no blog posts to show!" />
 		{:else}
-			<div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+			<div class="mt-2 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
 				{#each data.blogPosts as post}
-					<div class="self-auto">
+					<div class="break-inside-avoid mb-2">
 						<Card
 							Name={post.title}
 							Description={post.short_description}

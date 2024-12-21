@@ -8,18 +8,18 @@
 </script>
 
 <div class="flex">
-	<img
+	<!--<img
 		class="h-10 rounded-full"
 		src="/logo.png"
 		alt="Selectdev Logo"
 		height="40px"
 		width="40px"
 		on:error={ImageLoadError}
-	/>
+	/>-->
 
-	<h2 class="ml-2 text-primary-400 font-monster font-bold text-4xl">{Title}</h2>
+	<h2 class="text-primary-400 font-monster font-bold text-4xl">{Title}</h2>
 </div>
 
-<h6 class="mt-2 text-primary-200 font-cabin font-bold text-base">
+<h6 class="text-primary-200 font-cabin font-medium text-base">
 	{@html Description}
 </h6>

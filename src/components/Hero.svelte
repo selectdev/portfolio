@@ -17,7 +17,7 @@
 		Hello, there. I'm <span class="text-red-600">Zane</span>!
 	</h1>
 	<p
-		class="text-primary-300 text-left font-monster font-semibold tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
+		class="text-primary-300 text-left font-monster font-medium tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
 	>
 		I'm a {data.age}-year-old
 		<span class="text-secondary-300 font-bold">full-stack developer</span>
