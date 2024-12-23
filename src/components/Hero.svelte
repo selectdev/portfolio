@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from '../routes/$types';
-	import SpotifyCurrentListening from './SpotifyCurrentListening.svelte';
+	import Spotify from './Spotify.svelte';
 
 	export let data: PageData;
 </script>
@@ -31,7 +31,7 @@
 			: ''}
 	</p>
 
-	<SpotifyCurrentListening data={data.currentlyListening} />
+	<Spotify recent={data.recentlyListened} current={data.currentlyListening} />
 </div>
 
 <div class="p-3" />

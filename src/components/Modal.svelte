@@ -34,7 +34,7 @@
 					>
 				</button>
 			</div>
-            
+
 			<div class="content p-4">
 				<slot />
 			</div>

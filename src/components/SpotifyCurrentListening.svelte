@@ -27,7 +27,6 @@
 </script>
 
 {#if data}
-	<div class="p-2" />
 	<div class="group">
 		<!-- Minimal -->
 		<!-- group-hover:hidden group-hover:opacity-0 -->

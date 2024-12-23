@@ -247,6 +247,13 @@ export const load = async ({ request }: any) => {
 			else return d;
 		}
 	);
+	const recentlyListened = await fetch('https://api.selectdev.me/spotify/@recent').then(
+		async (a) => {
+			const d = await a.json();
+			if (d.error) return null;
+			else return d;
+		}
+	);
 
 	// Primary data
 	const data = {
@@ -261,7 +268,8 @@ export const load = async ({ request }: any) => {
 		pcSpecs,
 		peripherals,
 		socials,
-		currentlyListening
+		currentlyListening,
+		recentlyListened
 	};
 
 	// Return everything, render page.
