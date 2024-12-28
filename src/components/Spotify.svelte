@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Vibrant } from 'node-vibrant/browser';
 	import chroma from 'chroma-js';
-	import { onMount } from 'svelte';
 
 	const setColors = async (data: any, url: string) => {
 		const vibrant = new Vibrant(url);
@@ -26,7 +25,10 @@
 		for (const i of recent.items) await setColors(i, i.track.album.images[0].url);
 		return new Promise((resolve) => resolve(recent));
 	};
-	if (current) onMount(async () => await setColors(current, current.item.album.images[0].url));
+        const getCurrent = async (): Promise<any> => {
+		await setColors(current, current.item.album.images[0].url);
+		return new Promise((resolve) => resolve(current));
+	};
 </script>
 
 {#await getRecent()}
@@ -50,7 +52,10 @@
 			</a>
 		</div>
 
-		{#if current}
+                {#await getCurrent()}
+                  <div>Loading...</div>
+                {:then p}
+		{#if p}
 			<section class="mt-2">
 				<h2
 					class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
@@ -61,8 +66,8 @@
 				<div class="flex justify-center items-center">
 					<a
 						class="inline-block border shadow-md px-2 py-1 rounded-md bg-opacity-80 opacity-100 transition-opacity duration-300"
-						style="background: linear-gradient(to right, {current.gradientStart}, {current.gradientEnd}); color: {current.textColor};"
-						href={current.item.external_urls.spotify}
+						style="background: linear-gradient(to right, {p.gradientStart}, {p.gradientEnd}); color: {p.textColor};"
+						href={p.item.external_urls.spotify}
 					>
 						<div class="opacity-100">
 							<div class="flex items-center">
@@ -74,17 +79,17 @@
 								</div>
 
 								<img
-									src={current.item.album.images[0].url}
+									src={p.item.album.images[0].url}
 									class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
 									alt="Cover Art"
 								/>
 
 								<div class="ml-2 flex flex-col justify-center">
 									<p class="font-cabin font-bold text-base">
-										{current.item.name}
+										{p.item.name}
 									</p>
 									<p class="font-monster text-sm font-medium">
-										{current.item.artists[0].name}
+										{p.item.artists[0].name}
 									</p>
 								</div>
 							</div>
@@ -93,6 +98,7 @@
 				</div>
 			</section>
 		{/if}
+                {/await}
 
 		<section class="mt-3">
 			<h2
