@@ -36,7 +36,7 @@
 	};
 	const getTop = async (): Promise<any> => {
 		if (top) {
-			for (const i of top.items) await setColors(i, i.track.album.images[0].url);
+			for (const i of top.items) await setColors(i, i.album.images[0].url);
 			return new Promise((resolve) => resolve(top));
 		} else return new Promise((resolve) => resolve(null));
 	};
@@ -173,12 +173,12 @@
 									? 'rounded-l-sm rounded-r-lg'
 									: 'rounded-r-sm rounded-l-lg'} bg-opacity-80 opacity-100 transition-opacity duration-300"
 								style="background: linear-gradient(to right, {m.gradientStart}, {m.gradientEnd}); color: {m.textColor};"
-								href={m.track.external_urls.spotify}
+								href={m.external_urls.spotify}
 							>
 								<div class="opacity-100">
 									<div class="flex items-center">
 										<img
-											src={m.track.album.images[0].url}
+											src={m.album.images[0].url}
 											class="rounded-md border border-white/75 shadow-sm h-8 w-8"
 											alt="Cover Art"
 										/>
@@ -187,12 +187,12 @@
 											<p
 												class="max-w-[83%] font-cabin font-bold text-xs text-nowrap text-clip overflow-hidden"
 											>
-												{m.track.name}
+												{m.name}
 											</p>
 											<p
 												class="max-w-[83%] font-monster font-medium text-xs text-nowrap text-clip overflow-hidden"
 											>
-												{m.track.artists[0].name}
+												{m.artists[0].name}
 											</p>
 										</div>
 									</div>
