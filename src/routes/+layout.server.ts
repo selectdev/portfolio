@@ -88,11 +88,19 @@ export const load = async ({ request }: any) => {
 			flair: ['DEVELOPER']
 		},
 		{
+			name: 'NodeByte LTD',
+			description:
+				'NodeByte LTD is your premier partner for top-tier services, dedicated to exceeding your expectations and driving your success.',
+			link: 'https://nodebyte.co.uk/',
+			image: 'https://nodebyte.co.uk/_next/image?url=%2Flogo.png&w=48&q=75',
+			flair: ['SENIOR TECHNICAL ANALYST']
+		},
+		{
 			name: 'NetSocial',
 			description: 'Connect. Share. Grow.',
 			link: 'https://netsocial.app/',
-			image: 'https://cdn.netsocial.app/logos/netsocial.png',
-			flair: ['HIGH TABLE', 'DODP']
+			image: 'https://ucarecdn.com/f20ace85-6f83-42ba-908b-4bc68022d3c8/download.png',
+			flair: ['HIGH TABLE', 'LEAD DEVELOPER']
 		}
 	];
 
