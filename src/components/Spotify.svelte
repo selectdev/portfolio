@@ -46,7 +46,7 @@
                     href="https://open.spotify.com/"
 		>
 			<i class="fa-brands fa-spotify"></i> Music <i class="fa-solid fa-xs fa-up-right-from-square"></i>
-		</h2>
+		</a>
 
 		{#await getCurrent()}
 			<div>Loading...</div>
