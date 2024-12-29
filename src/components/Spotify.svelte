@@ -153,7 +153,7 @@
 			<h2
 				class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
 			>
-				Current Vibes
+				Vibe Highlights
 			</h2>
 
 			<p class="text-sm font-cabin font-medium text-right text-white/75">Coming Soon</p>
