@@ -20,6 +20,7 @@
 
 	export let recent: any;
 	export let current: any;
+	export let top: any;
 
 	const getRecent = async (): Promise<any> => {
 		if (recent) {
@@ -33,6 +34,12 @@
 			return new Promise((resolve) => resolve(current));
 		} else return new Promise((resolve) => resolve(null));
 	};
+	const getTop = async (): Promise<any> => {
+		if (top) {
+			for (const i of top.items) await setColors(i, i.track.album.images[0].url);
+			return new Promise((resolve) => resolve(top));
+		} else return new Promise((resolve) => resolve(null));
+	};
 </script>
 
 {#await getRecent()}
@@ -40,12 +47,15 @@
 {:then d}
 	<div class="p-2" />
 
-	<div class="inline-block w-full p-2 rounded-md border shadow-md bg-gradient-to-r from-slate-900 to-stone-900">
+	<div
+		class="inline-block w-full p-2 rounded-md border shadow-md bg-gradient-to-r from-slate-900 to-stone-900"
+	>
 		<a
-		    class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
-                    href="https://open.spotify.com/"
+			class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
+			href="https://open.spotify.com/"
 		>
-			<i class="fa-brands fa-spotify"></i> Music <i class="fa-solid fa-xs fa-up-right-from-square"></i>
+			<i class="fa-brands fa-spotify"></i> Music
+			<i class="fa-solid fa-xs fa-up-right-from-square"></i>
 		</a>
 
 		{#await getCurrent()}
@@ -96,60 +106,103 @@
 			{/if}
 		{/await}
 
-		<section class="mt-3">
-			<h2
-				class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
-			>
-				Recent Tunes
-			</h2>
+		{#if d}
+			<section class="mt-3">
+				<h2
+					class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
+				>
+					Recent Tunes
+				</h2>
 
-			<div class="grid grid-cols-2 gap-2">
-				{#each d.items as i, d}
-					<!-- Minimal -->
-					<!-- group-hover:hidden group-hover:opacity-0 -->
-					<a
-						class="inline-block border shadow-md px-2 py-1 {d === 1 || d === 3
-							? 'rounded-l-sm rounded-r-lg'
-							: 'rounded-r-sm rounded-l-lg'} bg-opacity-80 opacity-100 transition-opacity duration-300"
-						style="background: linear-gradient(to right, {i.gradientStart}, {i.gradientEnd}); color: {i.textColor};"
-						href={i.track.external_urls.spotify}
-					>
-						<div class="opacity-100">
-							<div class="flex items-center">
-								<img
-									src={i.track.album.images[0].url}
-									class="rounded-md border border-white/75 shadow-sm h-8 w-8"
-									alt="Cover Art"
-								/>
+				<div class="grid grid-cols-2 gap-2">
+					{#each d.items as i, d}
+						<!-- Minimal -->
+						<!-- group-hover:hidden group-hover:opacity-0 -->
+						<a
+							class="inline-block border shadow-md px-2 py-1 {d === 1 || d === 3
+								? 'rounded-l-sm rounded-r-lg'
+								: 'rounded-r-sm rounded-l-lg'} bg-opacity-80 opacity-100 transition-opacity duration-300"
+							style="background: linear-gradient(to right, {i.gradientStart}, {i.gradientEnd}); color: {i.textColor};"
+							href={i.track.external_urls.spotify}
+						>
+							<div class="opacity-100">
+								<div class="flex items-center">
+									<img
+										src={i.track.album.images[0].url}
+										class="rounded-md border border-white/75 shadow-sm h-8 w-8"
+										alt="Cover Art"
+									/>
 
-								<div class="w-full ml-2 flex flex-col justify-center">
-									<p
-										class="max-w-[83%] font-cabin font-bold text-xs text-nowrap text-clip overflow-hidden"
-									>
-										{i.track.name}
-									</p>
-									<p
-										class="max-w-[83%] font-monster font-medium text-xs text-nowrap text-clip overflow-hidden"
-									>
-										{i.track.artists[0].name}
-									</p>
+									<div class="w-full ml-2 flex flex-col justify-center">
+										<p
+											class="max-w-[83%] font-cabin font-bold text-xs text-nowrap text-clip overflow-hidden"
+										>
+											{i.track.name}
+										</p>
+										<p
+											class="max-w-[83%] font-monster font-medium text-xs text-nowrap text-clip overflow-hidden"
+										>
+											{i.track.artists[0].name}
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</a>
-				{/each}
-			</div>
-		</section>
+						</a>
+					{/each}
+				</div>
+			</section>
+		{/if}
 
-		<section class="mt-3">
-			<h2
-				class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
-			>
-				Vibe Highlights
-			</h2>
+		{#await getTop()}
+			<div>Loading...</div>
+		{:then l}
+			{#if l}
+				<section class="mt-3">
+					<h2
+						class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
+					>
+						Vibe Highlights
+					</h2>
 
-			<p class="text-sm font-cabin font-medium text-right text-white/75">Coming Soon</p>
-		</section>
+					<div class="grid grid-cols-2 gap-2">
+						{#each l.items as m, n}
+							<!-- Minimal -->
+							<!-- group-hover:hidden group-hover:opacity-0 -->
+							<a
+								class="inline-block border shadow-md px-2 py-1 {n === 1 || n === 3
+									? 'rounded-l-sm rounded-r-lg'
+									: 'rounded-r-sm rounded-l-lg'} bg-opacity-80 opacity-100 transition-opacity duration-300"
+								style="background: linear-gradient(to right, {m.gradientStart}, {m.gradientEnd}); color: {m.textColor};"
+								href={m.track.external_urls.spotify}
+							>
+								<div class="opacity-100">
+									<div class="flex items-center">
+										<img
+											src={m.track.album.images[0].url}
+											class="rounded-md border border-white/75 shadow-sm h-8 w-8"
+											alt="Cover Art"
+										/>
+
+										<div class="w-full ml-2 flex flex-col justify-center">
+											<p
+												class="max-w-[83%] font-cabin font-bold text-xs text-nowrap text-clip overflow-hidden"
+											>
+												{m.track.name}
+											</p>
+											<p
+												class="max-w-[83%] font-monster font-medium text-xs text-nowrap text-clip overflow-hidden"
+											>
+												{m.track.artists[0].name}
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						{/each}
+					</div>
+				</section>
+			{/if}
+		{/await}
 	</div>
 {/await}
 

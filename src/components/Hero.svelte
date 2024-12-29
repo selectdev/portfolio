@@ -31,7 +31,7 @@
 			: ''}
 	</p>
 
-	<Spotify recent={data.recentlyListened} current={data.currentlyListening} />
+	<Spotify recent={data.recentlyListened} current={data.currentlyListening} top={data.topTracks} />
 </div>
 
 <div class="p-3" />

@@ -254,6 +254,11 @@ export const load = async ({ request }: any) => {
 			else return d;
 		}
 	);
+	const topTracks = await fetch('https://api.selectdev.me/spotify/@top').then(async (a) => {
+		const d = await a.json();
+		if (d.error) return null;
+		else return d;
+	});
 
 	// Primary data
 	const data = {
@@ -269,7 +274,8 @@ export const load = async ({ request }: any) => {
 		peripherals,
 		socials,
 		currentlyListening,
-		recentlyListened
+		recentlyListened,
+		topTracks
 	};
 
 	// Return everything, render page.
