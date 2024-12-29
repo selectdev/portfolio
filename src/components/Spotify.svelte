@@ -23,15 +23,15 @@
 
 	const getRecent = async (): Promise<any> => {
 		if (recent) {
-            for (const i of recent.items) await setColors(i, i.track.album.images[0].url);
-		    return new Promise((resolve) => resolve(recent));
-        } else return new Promise((resolve) => resolve(null));
+			for (const i of recent.items) await setColors(i, i.track.album.images[0].url);
+			return new Promise((resolve) => resolve(recent));
+		} else return new Promise((resolve) => resolve(null));
 	};
 	const getCurrent = async (): Promise<any> => {
 		if (current) {
-            await setColors(current, current.item.album.images[0].url);
-		    return new Promise((resolve) => resolve(current));
-        } else return new Promise((resolve) => resolve(null));
+			await setColors(current, current.item.album.images[0].url);
+			return new Promise((resolve) => resolve(current));
+		} else return new Promise((resolve) => resolve(null));
 	};
 </script>
 
@@ -116,7 +116,9 @@
 					<!-- Minimal -->
 					<!-- group-hover:hidden group-hover:opacity-0 -->
 					<a
-						class="inline-block border shadow-md px-2 py-1 {d === 1 || d === 3 ? "rounded-l-sm rounded-r-lg" : "rounded-r-sm rounded-l-lg"} bg-opacity-80 opacity-100 transition-opacity duration-300"
+						class="inline-block border shadow-md px-2 py-1 {d === 1 || d === 3
+							? 'rounded-l-sm rounded-r-lg'
+							: 'rounded-r-sm rounded-l-lg'} bg-opacity-80 opacity-100 transition-opacity duration-300"
 						style="background: linear-gradient(to right, {i.gradientStart}, {i.gradientEnd}); color: {i.textColor};"
 						href={i.track.external_urls.spotify}
 					>
@@ -145,6 +147,16 @@
 					</a>
 				{/each}
 			</div>
+		</section>
+
+		<section class="mt-3">
+			<h2
+				class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
+			>
+				Current Vibes
+			</h2>
+
+			<p class="text-sm font-cabin font-medium text-right text-white/75">Coming Soon</p>
 		</section>
 	</div>
 {/await}
