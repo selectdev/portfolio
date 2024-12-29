@@ -22,12 +22,16 @@
 	export let current: any;
 
 	const getRecent = async (): Promise<any> => {
-		for (const i of recent.items) await setColors(i, i.track.album.images[0].url);
-		return new Promise((resolve) => resolve(recent));
+		if (recent) {
+            for (const i of recent.items) await setColors(i, i.track.album.images[0].url);
+		    return new Promise((resolve) => resolve(recent));
+        } else return new Promise((resolve) => resolve(null));
 	};
-        const getCurrent = async (): Promise<any> => {
-		await setColors(current, current.item.album.images[0].url);
-		return new Promise((resolve) => resolve(current));
+	const getCurrent = async (): Promise<any> => {
+		if (current) {
+            await setColors(current, current.item.album.images[0].url);
+		    return new Promise((resolve) => resolve(current));
+        } else return new Promise((resolve) => resolve(null));
 	};
 </script>
 
@@ -36,83 +40,83 @@
 {:then d}
 	<div class="p-2" />
 
-	<div class="inline-block p-2 rounded-md bg-black">
+	<div class="inline-block w-full p-2 rounded-md bg-gradient-to-r from-slate-900 to-stone-900">
 		<div class="flex justify-between items-center">
 			<h2
 				class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
 			>
-				<i class="fa-brands fa-spotify"></i> Spotify
+				<i class="fa-brands fa-spotify"></i> Spotify Music
 			</h2>
 
 			<a
 				class="inline-block text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase hover:underline"
 				href="https://open.spotify.com/"
 			>
-				OPEN <i class="fa-solid fa-up-right-from-square"></i>
+				OPEN <i class="fa-solid fa-xs fa-up-right-from-square"></i>
 			</a>
 		</div>
 
-                {#await getCurrent()}
-                  <div>Loading...</div>
-                {:then p}
-		{#if p}
-			<section class="mt-2">
-				<h2
-					class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
-				>
-					Currently Playing
-				</h2>
-
-				<div class="flex justify-center items-center">
-					<a
-						class="inline-block border shadow-md px-2 py-1 rounded-md bg-opacity-80 opacity-100 transition-opacity duration-300"
-						style="background: linear-gradient(to right, {p.gradientStart}, {p.gradientEnd}); color: {p.textColor};"
-						href={p.item.external_urls.spotify}
+		{#await getCurrent()}
+			<div>Loading...</div>
+		{:then p}
+			{#if p}
+				<section class="mt-2">
+					<h2
+						class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
 					>
-						<div class="opacity-100">
-							<div class="flex items-center">
-								<div class="boxContainer">
-									<div class="box box1"></div>
-									<div class="box box2"></div>
-									<div class="box box3"></div>
-									<div class="box box4"></div>
-								</div>
+						Current Vibes
+					</h2>
 
-								<img
-									src={p.item.album.images[0].url}
-									class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
-									alt="Cover Art"
-								/>
+					<div class="flex justify-center items-center">
+						<a
+							class="inline-block border shadow-md px-2 py-1 rounded-md bg-opacity-80 opacity-100 transition-opacity duration-300"
+							style="background: linear-gradient(to right, {p.gradientStart}, {p.gradientEnd}); color: {p.textColor};"
+							href={p.item.external_urls.spotify}
+						>
+							<div class="opacity-100">
+								<div class="flex items-center">
+									<div class="boxContainer">
+										<div class="box box1"></div>
+										<div class="box box2"></div>
+										<div class="box box3"></div>
+										<div class="box box4"></div>
+									</div>
 
-								<div class="ml-2 flex flex-col justify-center">
-									<p class="font-cabin font-bold text-base">
-										{p.item.name}
-									</p>
-									<p class="font-monster text-sm font-medium">
-										{p.item.artists[0].name}
-									</p>
+									<img
+										src={p.item.album.images[0].url}
+										class="ml-2 rounded-md border border-white/75 shadow-sm h-8 w-8"
+										alt="Cover Art"
+									/>
+
+									<div class="ml-2 flex flex-col justify-center">
+										<p class="font-cabin font-bold text-base">
+											{p.item.name}
+										</p>
+										<p class="font-monster text-sm font-medium">
+											{p.item.artists[0].name}
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-			</section>
-		{/if}
-                {/await}
+						</a>
+					</div>
+				</section>
+			{/if}
+		{/await}
 
 		<section class="mt-3">
 			<h2
 				class="text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase"
 			>
-				Recently Listened
+				Recent Tunes
 			</h2>
 
 			<div class="grid grid-cols-2 gap-2">
-				{#each d.items as i}
+				{#each d.items as i, d}
 					<!-- Minimal -->
 					<!-- group-hover:hidden group-hover:opacity-0 -->
 					<a
-						class="inline-block border shadow-md px-2 py-1 rounded-md bg-opacity-80 opacity-100 transition-opacity duration-300"
+						class="inline-block border shadow-md px-2 py-1 {d === 1 || d === 3 ? "rounded-l-sm rounded-r-lg" : "rounded-r-sm rounded-l-lg"} bg-opacity-80 opacity-100 transition-opacity duration-300"
 						style="background: linear-gradient(to right, {i.gradientStart}, {i.gradientEnd}); color: {i.textColor};"
 						href={i.track.external_urls.spotify}
 					>
@@ -124,14 +128,14 @@
 									alt="Cover Art"
 								/>
 
-								<div class="ml-2 flex flex-col justify-center">
+								<div class="w-full ml-2 flex flex-col justify-center">
 									<p
-										class="max-w-[80%] font-cabin font-bold text-xs text-nowrap text-ellipsis overflow-hidden"
+										class="max-w-[83%] font-cabin font-bold text-xs text-nowrap text-clip overflow-hidden"
 									>
 										{i.track.name}
 									</p>
 									<p
-										class="max-w-[80%] font-monster text-xs font-medium text-nowrap text-ellipsis overflow-hidden"
+										class="max-w-[83%] font-monster font-medium text-xs text-nowrap text-clip overflow-hidden"
 									>
 										{i.track.artists[0].name}
 									</p>
