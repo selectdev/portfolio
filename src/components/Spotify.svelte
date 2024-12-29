@@ -40,7 +40,7 @@
 {:then d}
 	<div class="p-2" />
 
-	<div class="inline-block w-full p-2 rounded-md bg-gradient-to-r from-slate-900 to-stone-900">
+	<div class="inline-block w-full p-2 rounded-md border shadow-md bg-gradient-to-r from-slate-900 to-stone-900">
 		<div class="flex justify-between items-center">
 			<h2
 				class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
