@@ -41,20 +41,12 @@
 	<div class="p-2" />
 
 	<div class="inline-block w-full p-2 rounded-md border shadow-md bg-gradient-to-r from-slate-900 to-stone-900">
-		<div class="flex justify-between items-center">
-			<h2
-				class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
-			>
-				<i class="fa-brands fa-spotify"></i> Spotify Music
-			</h2>
-
-			<a
-				class="inline-block text-sm font-monster tracking-tighter font-extrabold text-right text-white uppercase hover:underline"
-				href="https://open.spotify.com/"
-			>
-				OPEN <i class="fa-solid fa-xs fa-up-right-from-square"></i>
-			</a>
-		</div>
+		<a
+		    class="inline-block text-sm font-monster tracking-tighter font-extrabold text-left text-white uppercase"
+                    href="https://open.spotify.com/"
+		>
+			<i class="fa-brands fa-spotify"></i> Music <i class="fa-solid fa-xs fa-up-right-from-square"></i>
+		</h2>
 
 		{#await getCurrent()}
 			<div>Loading...</div>
