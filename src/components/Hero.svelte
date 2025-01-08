@@ -14,7 +14,7 @@
 	<h1
 		class="pt-1 text-primary-600 text-left font-monster non-italic text-3xl md:text-4xl font-extrabold"
 	>
-		Hello, there. I'm <span class="text-red-600">Zane</span>!
+		Hello, there. I'm <span class="text-red-600">Select</span>!
 	</h1>
 	<p
 		class="text-primary-300 text-left font-monster font-medium tracking-tight md:text-xl md:w-3/4 md:text-wrap md:whitespace-normal"
