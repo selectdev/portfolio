@@ -73,6 +73,13 @@ export const load = async ({ request }: any) => {
 		flair: string[];
 	}[] = [
 		{
+			name: 'Purrquinox',
+			description: 'Purrquinox. The future of digital technology.',
+			link: 'https://purrquinox.com/',
+			image: 'https://purrquinox.com/logo.png',
+			flair: ['OWNER', 'CHIEF EXECUTIVE OFFICER']
+		},
+		{
 			name: 'Infinity List',
 			description: 'Begin your Discord journey with our extensive directory.',
 			link: 'https://infinitybots.gg/',
