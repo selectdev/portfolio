@@ -97,10 +97,10 @@ export const load = async ({ request }: any) => {
 		},
 		{
 			name: 'NetSocial',
-			description: 'Connect. Share. Grow.',
+			description: 'NetSocial empowers communities to be who they want to be, no more bots, paywalls, and obscene content!',
 			link: 'https://netsocial.app/',
 			image: 'https://ucarecdn.com/f20ace85-6f83-42ba-908b-4bc68022d3c8/download.png',
-			flair: ['HIGH TABLE', 'LEAD DEVELOPER']
+			flair: ['HUMAN RESOURCES', 'LEAD DEVELOPER']
 		}
 	];
 
@@ -125,18 +125,11 @@ export const load = async ({ request }: any) => {
 			image: 'fa-brands fa-react'
 		},
 		{
-			name: 'NodeJS',
+			name: 'NodeJS/Typescript',
 			description:
 				'Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.',
 			link: 'https://nodejs.org/',
 			image: 'fa-brands fa-node-js'
-		},
-		{
-			name: 'JavaScript',
-			description:
-				'JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS.',
-			link: 'https://www.w3schools.com/js/DEFAULT.asp',
-			image: 'fa-brands fa-js'
 		},
 		{
 			name: 'Go',
@@ -236,6 +229,11 @@ export const load = async ({ request }: any) => {
 			name: 'Twitter',
 			url: 'https://twitter.com/heypurrquinox',
 			icon: 'fab fa-twitter'
+		},
+		{
+			name: 'Twitch',
+			url: 'https://twitch.tv/selectdev',
+			icon: 'fab fa-twitch'
 		}
 	];
 
