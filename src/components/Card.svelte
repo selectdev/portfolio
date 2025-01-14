@@ -12,7 +12,7 @@
 </script>
 
 <div
-	class="block max-w-sm p-3 border rounded-lg shadow-md bg-gray-600 border-gray-800 hover:bg-gray-700"
+	class="block max-w-sm p-3 border rounded-lg shadow-md bg-surface-700 border-surface-800 hover:bg-surface-600"
 >
 	<a href={Link || '/'}>
 		{#if Flairs && Flairs.length != 0}
@@ -29,11 +29,11 @@
 		<div class="{Flairs && Flairs.length != 0 ? 'mt-3' : ''} flex items-center">
 			{#if Image}
 				{#if Image.startsWith('fa-')}
-					<i class="mb-0.5 fa-xl max-h-[25px] text-black rounded-full {Image}"></i>
+					<i class="mb-0.5 fa-xl max-h-[25px] text-white rounded-full {Image}"></i>
 				{:else}
 					<img
 						src={Image}
-						class="max-h-[25px] bg-primary-600 rounded-full"
+						class="max-h-[25px] bg-surface-700 rounded-full"
 						alt="{Name} logo"
 						loading="lazy"
 						on:error={ImageLoadError}
@@ -44,13 +44,13 @@
 			<h5
 				class="{Image
 					? 'ml-2'
-					: ''} text-md font-monster font-semibold overflow-x-auto text-black"
+					: ''} text-md font-monster font-semibold overflow-x-auto text-secondary-400"
 			>
 				{Name}
 			</h5>
 		</div>
 
-		<p class="mt-1 text-base font-monster font-medium tracking-tight text-gray-500">
+		<p class="mt-1 text-base font-monster font-medium tracking-tight text-secondary-500">
 			{Description}
 		</p>
 
